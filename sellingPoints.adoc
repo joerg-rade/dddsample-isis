@@ -13,7 +13,7 @@ digraph g {
     r -> c 
     sc [label="Sustainable\nCode"]
     c -> sc
-    lc [label="Low Code\nDevelopment Platform"    URL="https://en.wikipedia.org/wiki/Low-code_development_platforms"]
+    lc [label="Low Code\nDevelopment\nPlatform"    URL="https://en.wikipedia.org/wiki/Low-code_development_platforms"]
     lc -> r
     ttm [label="Time\nTo\nMarket"]
     pdc [label="Productivity"]
@@ -45,11 +45,14 @@ digraph g {
     sui -> ta [label="by avoiding SUI\nease"]
     ta -> sc 
     doc [label="Documentation"]
-    ai -> doc [label="extensive"]
+    ai -> doc [label="has\nextensive"]
     doc -> p [label="refers to"]
+    doc -> c [label="contributes\nto"]
+    edge [style=dotted arrowhead=none]
     std_note [shape=note label="Planned:\nJPA support\n(alongside JDO)" fillcolor=gold style=filled]
     std_note -> std 
     uig_note [shape=note fillcolor=gold style=filled label="Allows for tight feedback loop\nmatches agile projects"]
     uig_note -> uig
+    uig_note -> ttm
 }
 ----
