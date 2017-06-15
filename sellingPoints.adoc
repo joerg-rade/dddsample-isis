@@ -1,0 +1,51 @@
+.Apache Isis - Selling Points
+[graphviz, dot-example, svg]
+----
+digraph g {
+    r [label="Readability"]
+    c [label="Comprehensibility"]
+    bp [label="Best\nPractice"]
+    p [label="Patterns"]
+    p -> bp [label="use of\nP.\nis"]
+    cc [label="Code\nConventions"]
+    cc -> bp [label="use of\nCC.\nis"]
+    bp -> c 
+    r -> c 
+    sc [label="Sustainable\nCode"]
+    c -> sc
+    lc [label="Low Code\nDevelopment Platform"    URL="https://en.wikipedia.org/wiki/Low-code_development_platforms"]
+    lc -> r
+    ttm [label="Time\nTo\nMarket"]
+    pdc [label="Productivity"]
+    uig [label="UI\nGeneration"]
+    sc -> pdc 
+    ai [label="Apache\nIsis"]
+    ai -> lc [label="is a"]
+    ai -> uig [label="offers"]
+    hr [label="Human\nResources"]
+    hr -> sc
+    uig -> ttm [label="shortens"]
+    ddd [label="Domain\nDriven\nDesign"]
+    ai -> ddd [label="enforces\nuse of"]
+    ddd -> c [label="promotes"]
+    i [label="Innovation"]
+    ttm -> i [label="is crucial for"]
+    es [label="Economic\nSuccess"]
+    i -> es [label=""]
+    pdc -> es
+    std [label="Standard\nComponents"]
+    ai -> std [label="is based on"]
+    std -> hr [label="use of SC.\nincreases\nsupply of"]
+    dh [label="Developer\nHappiness"]
+    pdc -> dh [label="increases"]
+    dh -> hr [label="increases\nsupply of"]
+    sui [label="Smart UI\n(Anti Pattern)" URL="https://de.wikipedia.org/wiki/Smart_UI"]
+    ddd -> sui [label="discourages"]
+    ta [label="Test\nAutomation"]
+    sui -> ta [label="by avoiding SUI\nease"]
+    ta -> sc 
+    doc [label="Documentation"]
+    ai -> doc [label="extensive"]
+    doc -> p [label="refers to"]
+}
+----
