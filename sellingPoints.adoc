@@ -47,5 +47,9 @@ digraph g {
     doc [label="Documentation"]
     ai -> doc [label="extensive"]
     doc -> p [label="refers to"]
+    std_note [shape=note label="Planned:\nJPA support\n(alongside JDO)" fillcolor=gold style=filled]
+    std_note -> std 
+    uig_note [shape=note fillcolor=gold style=filled label="Allows for tight feedback loop\nmatches agile projects"]
+    uig_note -> uig
 }
 ----
