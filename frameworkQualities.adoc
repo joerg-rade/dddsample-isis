@@ -1,0 +1,109 @@
+
+.Apache Isis - Qualities of the Framework
+[graphviz, frameworkQualities, svg]
+----
+digraph g {
+    node [fontname=arial] 
+    edge [fontname=arial] 
+
+    // developer perspective
+    node [style=filled fillcolor=white]
+    ai [label="Apache\nIsis"]
+    c [label="Comprehensibility"]
+    dh [label="Developer\nHappiness"]
+        ai -> lc [label="is a"]
+
+    // description
+    node [style=filled fillcolor=lightblue]
+    p [label="Design\nPatterns"]
+    ddd [label="Domain\nDriven\nDesign"]
+    ta [label="Test\nAutomation"]
+    doc [label="Documentation"]
+        ai -> ddd [label="enforces\nuse of"]
+        ddd -> p [label="is a\ncollection of"]
+        ta -> sc 
+        ai -> doc [label="has\nextensive"]
+        doc -> p [label="refers to"]
+        doc -> c [label="contributes\nto"]
+        p -> c [label="use of DP.\nis\nBestPractice"]
+    
+    // artefacts
+    node [style=filled fillcolor=lightgreen]
+    uig [label="Generated\nUI"]
+    dbg [label="Generated\nDB"]
+    ro [label="Generated\nRESTful\nAPI"]
+    std [label="Standard\nComponents"]
+    sc [label="Sustainable\nCode"]
+        ai -> uig [label="offers"]
+        ai -> dbg [label="offers"]
+        ai -> ro [label="offers"]
+        uig -> ta [label="promotes"]
+        ai -> std [label="is based on"]
+        c -> sc
+    
+    // role
+    lc [label="Lean Code\nDevelopment\nPlatform"    URL="https://en.wikipedia.org/wiki/Low-code_development_platforms" style=filled fillcolor=yellow]
+        lc -> c
+    
+    // economic factors
+    node [style=filled fillcolor=pink]
+    ttm [label="Time\nTo\nMarket"]
+    pdc [label="Productivity"]
+    hr [label="Human\nResources"]
+    es [label="Economic\nSuccess"]
+        pdc -> dh [label="increases"]
+        sc -> pdc 
+        dbg -> ttm [label="shortens"]
+        uig -> ttm [label="shortens"]
+        dh -> hr [label="increases\nsupply of"]
+        hr -> sc
+        ttm -> es 
+        pdc -> es
+        std -> hr [label="use of SC.\nincreases\nsupply of"]
+
+    // notes
+    //subgraph clusterNotes {
+    node [fontsize=24]
+    edge [style=dotted arrowhead=none]
+    node [shape=note fillcolor=gold style=filled]
+    
+    std_note [label="Planned:\nJPA support\n(alongside JDO)"]
+        std_note -> std 
+    
+    uig_note [label=< Allows for tight <BR/> <B>feedback loop </B>,<br/> ideal for <BR/> <B>agile</B>  projects >]
+        uig_note -> uig
+        uig_note -> dbg
+    
+    ro_note [label="Allows for\ncustom UI\ndevelopment"]
+        ro_note -> ro
+    
+    ttm_note [label=< Key factor for <BR/> <B>innovative, <BR/> agile </B> <BR/> projects >] 
+        ttm_note -> ttm
+        
+    sui_note [label=< Avoids <BR/> Smart UI<BR/> Anti Pattern  > URL="https://de.wikipedia.org/wiki/Smart_UI"] 
+        sui_note -> uig
+        sui_note -> ddd
+    //}
+}
+----
+.Legend
+*pink* economic aspects +
+*blue* description +
+*yellow* role +
+*green* artefacts +
+[quote, Modeling in Color, Wikipedia]
+    *pink* moment-interval +
+        Does it represent a moment or interval of time that we need to remember and work with for legal or business reasons? Examples in business systems generally model activities involving people, places and things such as a sale, an order, a rental, an employment, making a journey, etc. +
+    *yellow* roles +
+        Is it a way of participating in an activity (by either a person, place, or thing)? A person playing the role of<an employee in an employment, a thing playing the role of a product in a sale, a location playing the role of a classroom for a training course, are examples of roles. +
+    *blue* description +
+         Is it simply a catalog-entry-like description which classifies or 'labels' an object? For example, the make and model of a car categorises or describes a number of physical vehicles. The relationship between the blue description and green party, place or thing is a type-instance relationship based on differences in the values of data items held in the 'type' object. +
+    *green* party, place, or thing +
+        Something tangible, uniquely identifiable. Typically the role-players in a system. People are green. Organizations are green. The physical objects involved in a rental such as the physical DVDs are green . Normally, if you get through the above three questions and end up here, your class is a "green." +
+
+
+.References
+* Modeling in Color [https://en.wikipedia.org/wiki/Object_Modeling_in_Color] 
+* Unique SellingProposition [https://en.wikipedia.org/wiki/Unique_selling_proposition]
+
+----
