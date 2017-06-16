@@ -1,0 +1,100 @@
+.References
+* Evans, Eric: Domain Driven Design. Tackling Complexity in the Heart of Software 
+
+.Domain Driven Design - Tactical Level
+[graphviz, tacticalLevel, svg]
+----
+digraph g {
+    node [fontname=arial] 
+    edge [fontname=arial] 
+
+    mdd [label="Model\nDriven\nDesign"]
+    svc [label="Services"]
+    de [label="Domain\nEvents"]
+    rep [label="Repositories"]
+    ag [label="Aggregates"]
+    e [label="Entities"]
+    vo [label="Value\nObjects"]
+    fct [label="Factories"]
+    sui [label="Smart\nUI"]
+    la [label="Layered\nArchitecture"]
+    
+    mdd -> svc [label="express\nmodel\nwith"]
+    mdd -> de [label="express\nchange\nwith"]
+    mdd -> e [label="express\nidentity\nwith"]
+    mdd -> vo [label="express\nstate &\ncomputation\nwith"]
+    
+    e -> de [label="push\nstate\nchange\nwith"]
+    e -> rep [label="access\nwith"]
+    e -> ag [label="encap-\nsulate\nwith"]
+    e -> ag [label="act as\nroot of"]
+    e -> fct [label="encap-\nsulate\nwith"]
+    
+    ag -> rep [label="access\nwith"]
+    ag -> fct [label="encap-\nsulate\nwith"]
+    
+    vo -> ag [label="encap-\nsulate\nwith"]
+    vo -> fct [label="encap-\nsulate\nwith"]
+
+    mdd -> sui [label="X\nmutually\nexclusive\nchoices"]
+    mdd -> la [label="isolate\ndomain\nexpressions\nwith"]
+}
+----
+
+.Domain Driven Design - Conceptual Level
+[graphviz, conceptualLevel, svg]
+----
+digraph g {
+    layout=dot 
+    node [fontname=arial] 
+    edge [fontname=arial] 
+
+    mdd [label="Model Driven\nDesign"]
+    ul [label="Ubiquitious Language"]
+    mdd -> ul [label="model\ngives\nstructure\nto"]
+    
+    bc [label="Bounded Context"]
+    mdd -> bc [label="define\nmodel\nwith"]
+    bc -> ul [label="names\nenter"]
+    
+    cd [label="Core Domain"]
+    cd -> ul [label="cultivate\nrich\nmodel\nwith"]
+    cd -> bc [label="work in\nautnonomous, clean "]
+    
+    gs [label="Generic\nSubdomains"]
+    cd -> gs [label="avoid\noverinvesting\nin"]
+    
+    ci [label="Continous\nIntegration"]
+    bc -> ci [label="keep\nmodel\nunified\nby"]
+    
+    cm [label="Context Map"]
+    bc -> cm [label="assess\n/overview\nrelationships\nwith"]
+    
+    sk [label="Shared\nKernel"]
+    cm -> sk [label="interdependent\ncontext\nfrom"]
+    cm -> sk [label="overlap\nallied\ncontexts\nthrough"]
+    
+    cs [label="Customer\n/Supplier"]
+    cm -> cs [label="relate\nallied\ncontexts\nas"]
+    
+    c [label="Conformist"]
+    cm -> c [label="minimize\ntranslation"]
+    
+    ohs [label="Open\nHost\nService"]
+    cm -> ohs [label="support\nmultipe\nclients\nthrough"]
+    
+    pl [label="Published\nLanguage"]
+    cm -> pl [label="loosely\ncouple\ncontexts\nthrough"]
+    ohs -> pl [label="formalize"]
+    
+    sw [label="Seperate\nWays"]
+    cm -> sw [label="frees\nteams\nto go"]
+    
+    acl [label="Anti-\ncorruption\nLayer"]
+    cm -> acl [label="translate\nand\ninsulate\nunilateraly\nwith"]
+    
+    bbm [label="Big\nBall of\nMud"]
+    cm -> bbm [label="segregate\nthe\nconceptual\nmesses"]
+}
+----
+----
