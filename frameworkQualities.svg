@@ -51,57 +51,57 @@
 <text text-anchor="middle" x="865" y="-748.167" font-family="arial" font-size="14.00">Documentation</text>
 </g>
 <!-- ai&#45;&gt;doc -->
-<g id="edge5" class="edge"><title>ai&#45;&gt;doc</title>
+<g id="edge4" class="edge"><title>ai&#45;&gt;doc</title>
 <path fill="none" stroke="black" d="M729.37,-899.245C744.501,-886.008 763.847,-868.474 780,-851.867 803.461,-827.747 828.312,-798.288 845.043,-777.806"/>
 <polygon fill="black" stroke="black" points="847.885,-779.858 851.47,-769.889 842.45,-775.446 847.885,-779.858"/>
 <text text-anchor="middle" x="837.5" y="-840.667" font-family="arial" font-size="14.00">has</text>
 <text text-anchor="middle" x="837.5" y="-825.667" font-family="arial" font-size="14.00">extensive</text>
 </g>
 <!-- uig -->
-<g id="node10" class="node"><title>uig</title>
+<g id="node9" class="node"><title>uig</title>
 <ellipse fill="lightgreen" stroke="black" cx="567" cy="-751.867" rx="59.2941" ry="26.7407"/>
 <text text-anchor="middle" x="567" y="-755.667" font-family="arial" font-size="14.00">Generated</text>
 <text text-anchor="middle" x="567" y="-740.667" font-family="arial" font-size="14.00">UI</text>
 </g>
 <!-- ai&#45;&gt;uig -->
-<g id="edge9" class="edge"><title>ai&#45;&gt;uig</title>
+<g id="edge8" class="edge"><title>ai&#45;&gt;uig</title>
 <path fill="none" stroke="black" d="M683.301,-897.633C673.668,-887.952 661.569,-877.265 649,-869.867 626.834,-856.821 611.726,-870.503 594,-851.867 578.034,-835.082 571.322,-809.807 568.582,-788.997"/>
 <polygon fill="black" stroke="black" points="572.045,-788.468 567.507,-778.894 565.084,-789.208 572.045,-788.468"/>
 <text text-anchor="middle" x="613" y="-833.167" font-family="arial" font-size="14.00">offers</text>
 </g>
 <!-- dbg -->
-<g id="node11" class="node"><title>dbg</title>
+<g id="node10" class="node"><title>dbg</title>
 <ellipse fill="lightgreen" stroke="black" cx="241" cy="-751.867" rx="59.2941" ry="26.7407"/>
 <text text-anchor="middle" x="241" y="-755.667" font-family="arial" font-size="14.00">Generated</text>
 <text text-anchor="middle" x="241" y="-740.667" font-family="arial" font-size="14.00">DB</text>
 </g>
 <!-- ai&#45;&gt;dbg -->
-<g id="edge10" class="edge"><title>ai&#45;&gt;dbg</title>
+<g id="edge9" class="edge"><title>ai&#45;&gt;dbg</title>
 <path fill="none" stroke="black" d="M684.584,-897.45C674.937,-887.366 662.47,-876.41 649,-869.867 602.86,-847.457 585.438,-861.199 535,-851.867 434.029,-833.186 402.491,-846.336 309,-803.867 297.02,-798.425 285.136,-790.587 274.735,-782.682"/>
 <polygon fill="black" stroke="black" points="276.756,-779.819 266.737,-776.373 272.421,-785.315 276.756,-779.819"/>
 <text text-anchor="middle" x="554" y="-833.167" font-family="arial" font-size="14.00">offers</text>
 </g>
 <!-- ro -->
-<g id="node12" class="node"><title>ro</title>
+<g id="node11" class="node"><title>ro</title>
 <ellipse fill="lightgreen" stroke="black" cx="1015" cy="-751.867" rx="59.2941" ry="37.4533"/>
 <text text-anchor="middle" x="1015" y="-763.167" font-family="arial" font-size="14.00">Generated</text>
 <text text-anchor="middle" x="1015" y="-748.167" font-family="arial" font-size="14.00">RESTful</text>
 <text text-anchor="middle" x="1015" y="-733.167" font-family="arial" font-size="14.00">API</text>
 </g>
 <!-- ai&#45;&gt;ro -->
-<g id="edge11" class="edge"><title>ai&#45;&gt;ro</title>
+<g id="edge10" class="edge"><title>ai&#45;&gt;ro</title>
 <path fill="none" stroke="black" d="M742.917,-907.155C777.55,-894.423 829.199,-874.123 872,-851.867 907.112,-833.609 914.481,-826.422 947,-803.867 954.48,-798.679 962.304,-793.03 969.871,-787.443"/>
 <polygon fill="black" stroke="black" points="972.019,-790.208 977.953,-781.43 967.841,-784.591 972.019,-790.208"/>
 <text text-anchor="middle" x="941" y="-833.167" font-family="arial" font-size="14.00">offers</text>
 </g>
 <!-- std -->
-<g id="node13" class="node"><title>std</title>
+<g id="node12" class="node"><title>std</title>
 <ellipse fill="lightgreen" stroke="black" cx="94" cy="-751.867" rx="69.0935" ry="26.7407"/>
 <text text-anchor="middle" x="94" y="-755.667" font-family="arial" font-size="14.00">Standard</text>
 <text text-anchor="middle" x="94" y="-740.667" font-family="arial" font-size="14.00">Components</text>
 </g>
 <!-- ai&#45;&gt;std -->
-<g id="edge13" class="edge"><title>ai&#45;&gt;std</title>
+<g id="edge12" class="edge"><title>ai&#45;&gt;std</title>
 <path fill="none" stroke="black" d="M685.138,-897.045C675.523,-886.742 662.925,-875.722 649,-869.867 572.706,-837.789 357.384,-871.571 277,-851.867 223.635,-838.786 169.079,-806.299 133.588,-782.084"/>
 <polygon fill="black" stroke="black" points="135.2,-778.943 124.988,-776.123 131.212,-784.697 135.2,-778.943"/>
 <text text-anchor="middle" x="314" y="-833.167" font-family="arial" font-size="14.00">is based on</text>
@@ -112,8 +112,8 @@
 <text text-anchor="middle" x="692" y="-402.52" font-family="arial" font-size="14.00">Comprehensibility</text>
 </g>
 <!-- sc -->
-<g id="node9" class="node"><title>sc</title>
-<ellipse fill="lightblue" stroke="black" cx="552" cy="-324.35" rx="63.7795" ry="26.7407"/>
+<g id="node13" class="node"><title>sc</title>
+<ellipse fill="lightgreen" stroke="black" cx="552" cy="-324.35" rx="63.7795" ry="26.7407"/>
 <text text-anchor="middle" x="552" y="-328.15" font-family="arial" font-size="14.00">Sustainable</text>
 <text text-anchor="middle" x="552" y="-313.15" font-family="arial" font-size="14.00">Code</text>
 </g>
@@ -153,7 +153,7 @@
 <text text-anchor="middle" x="748" y="-540.237" font-family="arial" font-size="14.00">Patterns</text>
 </g>
 <!-- p&#45;&gt;c -->
-<g id="edge8" class="edge"><title>p&#45;&gt;c</title>
+<g id="edge7" class="edge"><title>p&#45;&gt;c</title>
 <path fill="none" stroke="black" d="M737.988,-524.833C727.99,-499.262 712.685,-460.12 702.513,-434.107"/>
 <polygon fill="black" stroke="black" points="705.66,-432.543 698.758,-424.505 699.14,-435.092 705.66,-432.543"/>
 <text text-anchor="middle" x="768" y="-480.39" font-family="arial" font-size="14.00">use of DP.</text>
@@ -174,35 +174,25 @@
 <text text-anchor="middle" x="533" y="-457.89" font-family="arial" font-size="14.00">Automation</text>
 </g>
 <!-- ta&#45;&gt;sc -->
-<g id="edge4" class="edge"><title>ta&#45;&gt;sc</title>
+<g id="edge13" class="edge"><title>ta&#45;&gt;sc</title>
 <path fill="none" stroke="black" d="M536.441,-442.241C539.448,-419.646 543.847,-386.603 547.2,-361.408"/>
 <polygon fill="black" stroke="black" points="550.67,-361.864 548.521,-351.489 543.732,-360.94 550.67,-361.864"/>
 </g>
 <!-- doc&#45;&gt;c -->
-<g id="edge7" class="edge"><title>doc&#45;&gt;c</title>
+<g id="edge6" class="edge"><title>doc&#45;&gt;c</title>
 <path fill="none" stroke="black" d="M877.452,-734.031C886.526,-720.658 898.061,-701.072 903,-681.867 911.297,-649.604 911.244,-639.19 903,-606.914 882.358,-526.095 878.063,-494.418 813,-442.22 800.499,-432.191 785.238,-425.036 769.823,-419.931"/>
 <polygon fill="black" stroke="black" points="770.814,-416.574 760.228,-417.01 768.775,-423.271 770.814,-416.574"/>
 <text text-anchor="middle" x="933" y="-555.237" font-family="arial" font-size="14.00">contributes</text>
 <text text-anchor="middle" x="933" y="-540.237" font-family="arial" font-size="14.00">to</text>
 </g>
 <!-- doc&#45;&gt;p -->
-<g id="edge6" class="edge"><title>doc&#45;&gt;p</title>
+<g id="edge5" class="edge"><title>doc&#45;&gt;p</title>
 <path fill="none" stroke="black" d="M860.78,-733.668C851.881,-697.794 831.402,-617.433 824,-606.914 815.505,-594.841 803.457,-584.472 791.451,-576.119"/>
 <polygon fill="black" stroke="black" points="793.043,-572.977 782.767,-570.398 789.192,-578.823 793.043,-572.977"/>
 <text text-anchor="middle" x="874" y="-640.69" font-family="arial" font-size="14.00">refers to</text>
 </g>
-<!-- pdc -->
-<g id="node15" class="node"><title>pdc</title>
-<ellipse fill="pink" stroke="black" cx="473" cy="-242.48" rx="57.6901" ry="18"/>
-<text text-anchor="middle" x="473" y="-238.78" font-family="arial" font-size="14.00">Productivity</text>
-</g>
-<!-- sc&#45;&gt;pdc -->
-<g id="edge17" class="edge"><title>sc&#45;&gt;pdc</title>
-<path fill="none" stroke="black" d="M528.297,-299.387C518.301,-289.281 506.689,-277.541 496.694,-267.436"/>
-<polygon fill="black" stroke="black" points="498.94,-264.729 489.42,-260.081 493.964,-269.652 498.94,-264.729"/>
-</g>
 <!-- uig&#45;&gt;ta -->
-<g id="edge12" class="edge"><title>uig&#45;&gt;ta</title>
+<g id="edge11" class="edge"><title>uig&#45;&gt;ta</title>
 <path fill="none" stroke="black" d="M542.227,-727.438C530.984,-715.093 518.9,-698.98 513,-681.867 492.495,-622.394 508.133,-548.301 520.894,-505.377"/>
 <polygon fill="black" stroke="black" points="524.283,-506.266 523.888,-495.678 517.594,-504.201 524.283,-506.266"/>
 <text text-anchor="middle" x="543.5" y="-640.69" font-family="arial" font-size="14.00">promotes</text>
@@ -233,6 +223,16 @@
 <text text-anchor="middle" x="249" y="-335.65" font-family="arial" font-size="14.00">use of SC.</text>
 <text text-anchor="middle" x="249" y="-320.65" font-family="arial" font-size="14.00">increases</text>
 <text text-anchor="middle" x="249" y="-305.65" font-family="arial" font-size="14.00">supply of</text>
+</g>
+<!-- pdc -->
+<g id="node15" class="node"><title>pdc</title>
+<ellipse fill="pink" stroke="black" cx="473" cy="-242.48" rx="57.6901" ry="18"/>
+<text text-anchor="middle" x="473" y="-238.78" font-family="arial" font-size="14.00">Productivity</text>
+</g>
+<!-- sc&#45;&gt;pdc -->
+<g id="edge17" class="edge"><title>sc&#45;&gt;pdc</title>
+<path fill="none" stroke="black" d="M528.297,-299.387C518.301,-289.281 506.689,-277.541 496.694,-267.436"/>
+<polygon fill="black" stroke="black" points="498.94,-264.729 489.42,-260.081 493.964,-269.652 498.94,-264.729"/>
 </g>
 <!-- es -->
 <g id="node17" class="node"><title>es</title>

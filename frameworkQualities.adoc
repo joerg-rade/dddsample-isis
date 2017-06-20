@@ -21,7 +21,6 @@ digraph g {
     doc [label="Documentation"]
         ai -> ddd [label="enforces\nuse of"]
         ddd -> p [label="is a\ncollection of"]
-        ta -> sc 
         ai -> doc [label="has\nextensive"]
         doc -> p [label="refers to"]
         doc -> c [label="contributes\nto"]
@@ -39,6 +38,7 @@ digraph g {
         ai -> ro [label="offers"]
         uig -> ta [label="promotes"]
         ai -> std [label="is based on"]
+        ta -> sc 
         c -> sc
     
     // role
@@ -90,7 +90,7 @@ digraph g {
 *pink* economic aspects +
 *blue* description +
 *yellow* role +
-*green* artefacts +
+*green* artifacts +
 [quote, Modeling in Color, Wikipedia]
     *pink* moment-interval +
         Does it represent a moment or interval of time that we need to remember and work with for legal or business reasons? Examples in business systems generally model activities involving people, places and things such as a sale, an order, a rental, an employment, making a journey, etc. +
