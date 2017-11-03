@@ -1,0 +1,137 @@
+.Data-Context-Interaction
+[graphviz, dot-example, svg]
+----
+digraph g {
+    node [fontname=Helvetica  fontsize=20] 
+    edge [fontname=Helvetica  fontsize=20] 
+    subgraph clusterConcept {
+        style=invis
+        node[shape=note style=filled fillcolor=lightblue]
+        in [label=<
+        <TABLE ALIGN="LEFT" BORDER="0" >
+            <TR>
+                <TD>DCI</TD>
+                <TD ALIGN="LEFT"><B>Interaction</B> </TD>
+            </TR>
+            <TR>
+                <TD></TD>
+                <TD ALIGN="LEFT">roles have responsibilities,<BR/>expressed via interfaces</TD>
+            </TR> 
+        </TABLE> 
+        >]
+        dn [label=<
+        <TABLE ALIGN="LEFT" BORDER="0" >
+            <TR>
+                <TD ALIGN="LEFT">DCI</TD>
+                <TD ALIGN="LEFT"><B>Data</B> </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT">MVC</TD>
+                <TD ALIGN="LEFT">Model</TD>
+             </TR>
+             <TR>
+                <TD ALIGN="LEFT">DDD</TD>
+                <TD ALIGN="LEFT">Entity, ValueObject, Aggregate</TD>
+            </TR> 
+             <TR>
+                <TD ALIGN="LEFT">ISIS</TD>
+                <TD ALIGN="LEFT"><B>DomainObject</B></TD>
+            </TR> 
+             <TR>
+                <TD ALIGN="LEFT">Statefull</TD>
+                <TD ALIGN="LEFT">Yes</TD>
+            </TR> 
+        </TABLE>
+        >]
+//        cn [label="\n \nUML: UseCase\nISIS: "]
+        cn [label=<
+        <TABLE ALIGN="LEFT" BORDER="0" >
+            <TR>
+                <TD ALIGN="LEFT">DCI</TD>
+                <TD ALIGN="LEFT"><B>Context</B> </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT">aka</TD>
+                <TD ALIGN="LEFT">Scenario, Algorithm</TD>
+             </TR>
+             <TR>
+                <TD ALIGN="LEFT">UML</TD>
+                <TD ALIGN="LEFT">UseCase</TD>
+            </TR> 
+             <TR>
+                <TD ALIGN="LEFT">ISIS</TD>
+                <TD ALIGN="LEFT"><B>ViewModel</B></TD>
+            </TR> 
+             <TR>
+                <TD ALIGN="LEFT">Statefull</TD>
+                <TD ALIGN="LEFT">No</TD>
+            </TR> 
+        </TABLE>
+        >]
+        edge[arrowhead=none style=dashed]
+        // glue
+        // cn -> in -> dn [style=invis]
+    }
+    
+    // uml meta class model
+    subgraph clusterMeta {
+    node [shape=box style=filled] 
+    style=invis
+        mcr [label="<<metamodel>>\nRole" fillcolor=yellow]
+        mcuc [label="<<metamodel>>\nUseCase" fillcolor=pink]
+        mcd [label="<<metamodel>>\nObject" fillcolor=lightgreen]
+    }
+    edge [style=dotted arrowhead=none]
+    in -> mcr 
+    cn -> mcuc [color=red label="consists of\n1..n\n?" fontcolor=red]
+    dn -> mcd
+
+    // meta model relations 
+    edge[arrowhead=vee style=normal]
+    mcr -> mcd [headlabel=1 taillabel="1..n"]  
+    mcuc -> mcr [headlabel="1..n"] 
+
+// open issues 
+    edge [color=red style=dashed arrowhead=none]
+    
+// example
+    subgraph clusterExample {
+        style=invis
+        node[shape=record style=filled]
+        tx [label="{\<\<object\>\>\nAccountTransaction}" fillcolor=lightgreen]
+        cAcc [label="{\<\<object\>\>\nCheckingAccount}" fillcolor=lightgreen]
+        sAcc [label="{\<\<object\>\>\nSavingsAccount}" fillcolor=lightgreen] 
+        iAcc [label="{\<\<interface\>\>\nAccount\n|minimumBalance|deposit(amount)\nwithdraw(amount)\ngetBalance()}" fillcolor=yellow]
+        mt [label="{\<\<usecase\>\>\nMoneyTransfer||+MoneyTransfer(Account::source, Account::target)\n+transfer(amount)}" fillcolor=pink ]
+        edge [arrowhead=vee color=black style=normal]
+        mt -> tx [label="has a"]
+        mt, tx -> cAcc [label="<<role>>\nsourceAccount"]
+        mt, tx -> sAcc [label="<<role>>\ntargetAccount"]
+        edge [headlabel=implements dir=back style=dashed arrowtail=empty tailport=s]
+        iAcc -> cAcc
+        iAcc -> sAcc 
+    }
+    rank=same{cn, mcuc, mt}
+    rank=same{in, mcr }
+    rank=same{dn, mcd, cAcc, sAcc}
+}
+----
+...
+
+=== Motivation
+In my understanding the Naked Objects approach together with the Hexagonal Architecture aims to remove technical clutter (boilerplate) from implementation and thereby putting the Domain Object Model (back) into focus. Design Model and Object Model converge to POJO's.
+User Interfaces are derived from objects, actions that can be invoked on them, and lists of objects. 
+
+=== Open Issues:
+
+.Is a Context: 
+. an aggregation of n UseCases or 
+. identical to 1 UseCase? 
+
+According to DCI [1] Roles are injected into Objects.
+Isn't DependencyInjection via Construtors sufficient?
+Why should a complex framework be needed?
+
+=== References
+[1] Reenskaug & Coplien: Data, Context, and Interaction
+[2] Martin Fowler: The Anemic Domain Model

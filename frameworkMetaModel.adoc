@@ -1,0 +1,981 @@
+.ProgrammingModel-Overview
+[graphviz, ProgrammingModel-Overview, svg]
+----
+digraph g {
+    //circo dot fdp neato nop nop1 nop2 osage patchwork sfdp twopi
+    layout=dot
+    rankdir=LR  
+    node [fontname=Helvetica fontsize=16 style=filled fontcolor=white]
+    
+    // uml meta class model
+    node [shape=box] 
+    class [label="<<Java>>\nClass" fillcolor="#9BBB59"]
+    field [label="<<Java>>\nField" fillcolor="#F79646"]
+    method [label="<<Java>>\nMethod" fillcolor="#C0504D"]
+    class -> field [headlabel="0..n"]
+    class -> method [headlabel="0..n"]
+
+    node[shape=record fillcolor="#9BBB59"] //green
+
+    do [label=<
+        <TABLE ALIGN="LEFT" BORDER="0">
+            <TR>
+                <TD ALIGN="LEFT">@DomainObject</TD>
+                <TD ALIGN="LEFT"></TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT">auditing</TD>
+                <TD ALIGN="LEFT">Auditing.AS_CONFIGURED</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT">autoCompleteAction</TD>
+                <TD ALIGN="LEFT">String</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT">autoCompleteRepository</TD>
+                <TD ALIGN="LEFT">Class</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT">bounded</TD>
+                <TD ALIGN="LEFT">boolean</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT">createdLifecycleEvent</TD>
+                <TD ALIGN="LEFT">Class&lt;? extends ObjectCreatedEvent&lt;?,?&gt;&gt;</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT">editing</TD>
+                <TD ALIGN="LEFT">Editing.AS_CONFIGURED</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT">editingDisabledReason</TD>
+                <TD ALIGN="LEFT">String</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT">loadedLifecycleEvent</TD>
+                <TD ALIGN="LEFT">Class&lt;? extends ObjectLoadedEvent&lt;?,?&gt;&gt;</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT">mixinMethod</TD>
+                <TD ALIGN="LEFT">String</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT">nature</TD>
+                <TD ALIGN="LEFT">Nature.NOT_SPECIFIED</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT">objectType</TD>
+                <TD ALIGN="LEFT">String</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT">persistedLifecycleEvent</TD>
+                <TD ALIGN="LEFT">Class&lt;? extends ObjectPersistedEvent&lt;?,?&gt;&gt;</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT">persistingLifecycleEvent</TD>
+                <TD ALIGN="LEFT">Class&lt;? extends ObjectPersistingEvent&lt;?,?&gt;&gt;</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT">publishing</TD>
+                <TD ALIGN="LEFT">PublishingAS_CONFIGURED</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT">removingLifecycleEvent</TD>
+                <TD ALIGN="LEFT">Class&lt;? extends ObjectRemovingEvent&lt;?,?&gt;&gt;</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT">updatedLifecycleEvent</TD>
+                <TD ALIGN="LEFT">Class&lt;? extends ObjectUpdatedEvent&lt;?,?&gt;&gt;</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT">updatingLifecycleEvent</TD>
+                <TD ALIGN="LEFT">Class&lt;? extends ObjectUpdatingEvent&lt;?,?&gt;&gt;</TD>
+            </TR>
+        </TABLE> 
+    >] 
+
+    ds [label=<
+        <TABLE ALIGN="LEFT" BORDER="0">
+            <TR>
+                <TD ALIGN="LEFT">@DomainService</TD>
+                <TD ALIGN="LEFT"></TD>
+            </TR>
+            <HR />
+            <TR>
+                <TD ALIGN="LEFT">menuOrder</TD>
+                <TD ALIGN="LEFT">String (e.g. 10.5.1)</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT">nature</TD>
+                <TD ALIGN="LEFT">NatureOfService.VIEW</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT">objectType</TD>
+                <TD ALIGN="LEFT">String</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT">repositoryFor</TD>
+                <TD ALIGN="LEFT">Class[?]</TD>
+            </TR>
+        </TABLE> 
+    >] 
+        
+    vm [label=<
+        <TABLE ALIGN="LEFT" BORDER="0">
+            <TR>
+                <TD ALIGN="LEFT">@ViewModel</TD>
+                <TD ALIGN="LEFT"></TD>
+            </TR>
+        </TABLE> 
+    >] 
+
+    node[fillcolor="#F79646" fontcolor=white] //yellow / orange
+    p[label=<
+        <TABLE ALIGN="LEFT" BORDER="0">
+            <TR>
+                <TD ALIGN="LEFT">@Property</TD>
+                <TD ALIGN="LEFT"></TD>
+            </TR>
+            <HR />
+            <TR>
+                <TD ALIGN="LEFT"> command </TD>
+                <TD ALIGN="LEFT"> CommandReification</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> commandExecuteIn </TD>
+                <TD ALIGN="LEFT"> CommandExecuteIn</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> commandPersistence </TD>
+                <TD ALIGN="LEFT"> CommandPersistence </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> domainEvent </TD>
+                <TD ALIGN="LEFT"> Class&lt;? extends PropertyDomainEvent&lt;?,?&gt;&gt;</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT">editing</TD>
+                <TD ALIGN="LEFT">Editing.AS_CONFIGURED</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT">editingDisabledReason</TD>
+                <TD ALIGN="LEFT">String</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> fileAccept </TD>
+                <TD ALIGN="LEFT">String</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> hidden </TD>
+                <TD ALIGN="LEFT">Where.NOWHERE</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> maxLength</TD>
+                <TD ALIGN="LEFT"> int </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> mustSatisfy </TD>
+                <TD ALIGN="LEFT"> Class&lt;? extends Specification[]&gt; </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> notPersisted </TD>
+                <TD ALIGN="LEFT"> boolean </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> optionality </TD>
+                <TD ALIGN="LEFT"> Optionality.DEFAULT</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT">publishing</TD>
+                <TD ALIGN="LEFT">Publishing.AS_CONFIGURED</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> regexPattern </TD>
+                <TD ALIGN="LEFT"> String</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> regexPatternFlags </TD>
+                <TD ALIGN="LEFT"> int </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> regexPatternReplacement </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+        </TABLE> 
+    >] 
+    t[label=<
+        <TABLE ALIGN="LEFT" BORDER="0">
+            <TR>
+                <TD ALIGN="LEFT">@Title</TD>
+                <TD ALIGN="LEFT"></TD>
+            </TR>
+            <HR />
+            <TR>
+                <TD ALIGN="LEFT"> abbreviatedTo </TD>
+                <TD ALIGN="LEFT"> int</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> append </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> prepend </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+             <TR>
+                <TD ALIGN="LEFT"> sequence </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+        </TABLE> 
+    >] 
+        
+    coll[label=<
+        <TABLE ALIGN="LEFT" BORDER="0">
+            <TR>
+                <TD ALIGN="LEFT">@Collection</TD>
+                <TD ALIGN="LEFT"></TD>
+            </TR>
+            <HR />
+            <TR>
+                <TD ALIGN="LEFT"> domainEvent </TD>
+                <TD ALIGN="LEFT"> Class&lt;? extends CollectionDomainEvent&lt;?,?&gt;&gt;</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT">editing</TD>
+                <TD ALIGN="LEFT">Editing.AS_CONFIGURED</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT">editingDisabledReason</TD>
+                <TD ALIGN="LEFT">String</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> notPersisted </TD>
+                <TD ALIGN="LEFT"> boolean </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> typeOf </TD>
+                <TD ALIGN="LEFT"> Class&lt;?&gt; </TD>
+            </TR>
+        </TABLE> 
+    >] 
+
+    mo[label=<
+        <TABLE ALIGN="LEFT" BORDER="0">
+            <TR>
+                <TD ALIGN="LEFT">@MemberOrder</TD>
+                <TD ALIGN="LEFT"></TD>
+            </TR>
+            <HR />
+            <TR>
+                <TD ALIGN="LEFT"> name </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+             <TR>
+                <TD ALIGN="LEFT"> sequence </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+        </TABLE> 
+    >] 
+
+    node[fillcolor="#C0504D" fontcolor=white] //pink / red
+    a [label=<
+        <TABLE ALIGN="LEFT" BORDER="0">
+            <TR>
+                <TD ALIGN="LEFT"> @Action </TD>
+                <TD ALIGN="LEFT"></TD>
+            </TR>
+            <HR />
+            <TR>
+                <TD ALIGN="LEFT"> command </TD>
+                <TD ALIGN="LEFT"> CommandReification.AS_CONFIGURED </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> commandExecuteIn </TD>
+                <TD ALIGN="LEFT"> CommandExecuteIn.FOREGROUND </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> commandPersistence </TD>
+                <TD ALIGN="LEFT"> CommandPersistence </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> domainEvent </TD>
+                <TD ALIGN="LEFT"> Class&lt;? extends ActionDomainEvent&lt;?&gt;&gt;</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> hidden </TD>
+                <TD ALIGN="LEFT">Where.NOWHERE</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> invokeOn </TD>
+                <TD ALIGN="LEFT"> InvokeOn.OBJECT_ONLY</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT">publishing</TD>
+                <TD ALIGN="LEFT">Publishing.AS_CONFIGURED</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> restrictTo </TD>
+                <TD ALIGN="LEFT"> RestrictTo.NO_RESTRICTIONS</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> semantics </TD>
+                <TD ALIGN="LEFT"> SemanticsOf.NON_IDEMPOTENT</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> typeOf </TD>
+                <TD ALIGN="LEFT"> Class&lt;?&gt;</TD>
+            </TR>
+        </TABLE> 
+    >]
+    
+    pm [label=<
+        <TABLE ALIGN="LEFT" BORDER="0">
+            <TR>
+                <TD ALIGN="LEFT">@Parameter</TD>
+                <TD ALIGN="LEFT"></TD>
+            </TR>
+            <HR />
+            <TR>
+                <TD ALIGN="LEFT"> fileAccept </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> maxLength</TD>
+                <TD ALIGN="LEFT"> int </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> mustSatisfy </TD>
+                <TD ALIGN="LEFT"> Class&lt;? extends Specification[]&gt; </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> optionality </TD>
+                <TD ALIGN="LEFT"> Optionality.DEFAULT</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> regexPattern </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> regexPatternFlags </TD>
+                <TD ALIGN="LEFT"> int </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> regexPatternReplacement </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+        </TABLE> 
+    >] 
+
+    sma[fillcolor="#FF8C88" label=<
+        <TABLE ALIGN="LEFT" BORDER="0">
+            <TR>
+                <TD ALIGN="LEFT"> SupportingMethods (Action) </TD>
+                <TD ALIGN="LEFT"> return value</TD>
+            </TR>
+            <HR />
+            <TR>
+                <TD ALIGN="LEFT"> disableXXX() </TD>
+                <TD ALIGN="LEFT"> String \| null </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> hideXxx() </TD>
+                <TD ALIGN="LEFT"> boolean </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> validateXXX() </TD>
+                <TD ALIGN="LEFT"> String \| ... </TD>
+            </TR>
+        <HR/>
+            <TR>
+                <TD ALIGN="LEFT"> title() </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+
+        </TABLE> 
+    >] 
+
+    smp[fillcolor="#FFBB85" label=<
+        <TABLE ALIGN="LEFT" BORDER="0">
+            <TR>
+                <TD ALIGN="LEFT"> SupportingMethods (Property) </TD>
+                <TD ALIGN="LEFT"> return value</TD>
+            </TR>
+            <HR />
+            <TR>
+                <TD ALIGN="LEFT"> addTo&lt;CollectionName&gt;() </TD>
+                <TD ALIGN="LEFT"> ... </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> removeFrom&lt;CollectionName&gt;() </TD>
+                <TD ALIGN="LEFT"> ... </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> clear&lt;PropertyName&gt;() </TD>
+                <TD ALIGN="LEFT"> ... </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> modify&lt;PropertyName&gt;() </TD>
+                <TD ALIGN="LEFT">  ... </TD>
+            </TR>
+        </TABLE> 
+    >] 
+    /* Layouts */
+    node[fillcolor="#4181BD"] //blue
+    dol [label=<
+        <TABLE ALIGN="LEFT" BORDER="0">
+            <TR>
+                <TD ALIGN="LEFT">@DomainObjectLayout</TD>
+                <TD ALIGN="LEFT"></TD>
+            </TR>
+            <HR />
+            <TR>
+                <TD ALIGN="LEFT"> bookmarking </TD>
+                <TD ALIGN="LEFT"> BookmarkPolicy.NEVER </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> cssClass </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> cssClassFa </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> cssClassFaPosition </TD>
+                <TD ALIGN="LEFT"> CssClassFaPosition.LEFT</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> cssClassUiEvent </TD>
+                <TD ALIGN="LEFT"> Class &lt;? entends CssClassUiEvent&lt;?&gt;&gt;</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> describedAs</TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> iconUiEvent </TD>
+                <TD ALIGN="LEFT"> Class &lt;? entends IconUiEvent&lt;?&gt;&gt;</TD>
+            </TR>
+           <TR>
+                <TD ALIGN="LEFT"> named </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> paged </TD>
+                <TD ALIGN="LEFT"> int </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> plural </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+             <TR>
+                <TD ALIGN="LEFT"> titleUiEvent </TD>
+                <TD ALIGN="LEFT"> Class &lt;? entends TitleUiEvent&lt;?&gt;&gt;</TD>
+            </TR>
+        </TABLE> 
+    >] 
+
+    dsl [label=<
+        <TABLE ALIGN="LEFT" BORDER="0">
+            <TR>
+                <TD ALIGN="LEFT">@DomainServiceLayout</TD>
+                <TD ALIGN="LEFT"></TD>
+            </TR>
+            <HR />
+            <TR>
+                <TD ALIGN="LEFT"> menuBar </TD>
+                <TD ALIGN="LEFT"> MenuBar </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> menuOrder </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+           <TR>
+                <TD ALIGN="LEFT"> named </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+        </TABLE> 
+    >] 
+
+    vml [label=<
+        <TABLE ALIGN="LEFT" BORDER="0">
+            <TR>
+                <TD ALIGN="LEFT">@ViewModelLayout</TD>
+                <TD ALIGN="LEFT"></TD>
+            </TR>
+            <HR />
+            <TR>
+                <TD ALIGN="LEFT"> bookmarking </TD>
+                <TD ALIGN="LEFT"> BookmarkPolicy.NEVER </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> cssClass </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> cssClassFa </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> cssClassFaPosition </TD>
+                <TD ALIGN="LEFT"> CssClassFaPosition.LEFT </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> describedAs</TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+           <TR>
+                <TD ALIGN="LEFT"> named </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> paged </TD>
+                <TD ALIGN="LEFT"> int </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> plural </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+        </TABLE> 
+    >] 
+
+    al [label=<
+        <TABLE ALIGN="LEFT" BORDER="0">
+            <TR>
+                <TD ALIGN="LEFT">@ActionLayout</TD>
+                <TD ALIGN="LEFT"></TD>
+            </TR>
+            <HR />
+            <TR>
+                <TD ALIGN="LEFT"> bookmarking </TD>
+                <TD ALIGN="LEFT"> BookmarkPolicy.NEVER </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> contributed </TD>
+                <TD ALIGN="LEFT"> Contributed.AS_BOTH </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> cssClass </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> cssClassFa </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> cssClassFaPosition </TD>
+                <TD ALIGN="LEFT"> CssClassFaPosition.LEFT </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> describedAs</TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+           <TR>
+                <TD ALIGN="LEFT"> hidden </TD>
+			<TD ALIGN="LEFT">Where.NOT_SPECIFIED</TD>
+            </TR>
+           <TR>
+                <TD ALIGN="LEFT"> named </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> position</TD>
+                <TD ALIGN="LEFT"> Position.BELOW </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> promptStyle</TD>
+                <TD ALIGN="LEFT"> PromptStyle.AS_CONFIGURED </TD>
+            </TR>
+        </TABLE> 
+    >] 
+
+    pl [label=<
+        <TABLE ALIGN="LEFT" BORDER="0">
+            <TR>
+                <TD ALIGN="LEFT">@PropertyLayout</TD>
+                <TD ALIGN="LEFT"></TD>
+            </TR>
+            <HR />
+            <TR>
+                <TD ALIGN="LEFT"> describedAs</TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> hidden </TD>
+                <TD ALIGN="LEFT">Where.NOT_SPECIFIED</TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> labelPosition</TD>
+                <TD ALIGN="LEFT"> LabelPosition.DEFAULT </TD>
+            </TR>
+           <TR>
+                <TD ALIGN="LEFT"> multiline </TD>
+                <TD ALIGN="LEFT"> int </TD>
+            </TR>
+           <TR>
+                <TD ALIGN="LEFT"> named </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+           <TR>
+                <TD ALIGN="LEFT"> namedEscaped </TD>
+                <TD ALIGN="LEFT"> boolean </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> promptStyle</TD>
+                <TD ALIGN="LEFT"> PromptStyle.AS_CONFIGURED </TD>
+            </TR>
+           <TR>
+                <TD ALIGN="LEFT"> renderedAsDayBefore </TD>
+                <TD ALIGN="LEFT"> boolean </TD>
+            </TR>
+           <TR>
+                <TD ALIGN="LEFT"> typicalLength </TD>
+                <TD ALIGN="LEFT"> int</TD>
+            </TR>
+           <TR>
+                <TD ALIGN="LEFT"> unchanging </TD>
+                <TD ALIGN="LEFT"> boolean </TD>
+            </TR>
+        </TABLE> 
+    >] 
+
+    pml [label=<
+        <TABLE ALIGN="LEFT" BORDER="0">
+            <TR>
+                <TD ALIGN="LEFT">@ParameterLayout</TD>
+                <TD ALIGN="LEFT"></TD>
+            </TR>
+            <HR />
+            <TR>
+                <TD ALIGN="LEFT"> cssClass</TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> describedAs</TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> labelPosition</TD>
+                <TD ALIGN="LEFT"> LabelPosition.DEFAULT</TD>
+            </TR>
+           <TR>
+                <TD ALIGN="LEFT"> multiline </TD>
+                <TD ALIGN="LEFT"> int</TD>
+            </TR>
+           <TR>
+                <TD ALIGN="LEFT"> named </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+           <TR>
+                <TD ALIGN="LEFT"> namedEscaped </TD>
+                <TD ALIGN="LEFT"> boolean </TD>
+            </TR>
+           <TR>
+                <TD ALIGN="LEFT"> renderedAsDayBefore </TD>
+                <TD ALIGN="LEFT"> boolean </TD>
+            </TR>
+           <TR>
+                <TD ALIGN="LEFT"> typicalLength </TD>
+                <TD ALIGN="LEFT"> int</TD>
+            </TR>
+        </TABLE> 
+    >]
+    
+    node [fillcolor = white fontcolor=black]
+    enum [shape=none label=<
+        <TABLE BORDER="1">
+            <TR>
+                <TD BORDER="1" ALIGN="LEFT" BGCOLOR="lightgrey">Enumerations</TD>
+                <TD BORDER="1" ALIGN="LEFT" BGCOLOR="lightgrey">Values</TD>
+                <TD BORDER="1" ALIGN="LEFT" BGCOLOR="lightgrey">Referenced in</TD>
+            </TR>
+            <TR>
+                <TD BORDER="1" ALIGN="LEFT"> Auditing, Editing, Publishing, CommandReification</TD>
+                <TD BORDER="1" ALIGN="CENTER">
+                    AS_CONFIGURED<br/>
+                    DISABLED<br/>
+                    ENABLED
+                </TD>
+                <TD BORDER="1" ALIGN="LEFT"> @DomainObject, @Property, @Collection, @Action</TD>
+            </TR>
+            <TR>
+                <TD BORDER="1" ALIGN="LEFT"> NatureOfService </TD>
+                <TD BORDER="1" ALIGN="CENTER">DOMAIN<br/>VIEW<br/>VIEW_CONTRIBUTION	<br/>VIEW_MENU_ONLY<br/> VIEW_REST_ONLY</TD>
+                <TD BORDER="1" ALIGN="LEFT"> @DomainService </TD>
+            </TR>
+            <TR>
+                <TD BORDER="1" ALIGN="LEFT"> Nature </TD>
+                <TD BORDER="1" ALIGN="CENTER">EXTERNAL_ENTITY<br/>INMEMORY_ENTITY<br/>JDO_ENTITY<br/>MIXIN<br/>NOT_SPECIFIED<br/>VIEW_MODEL</TD>
+                <TD BORDER="1" ALIGN="LEFT"> @DomainObject </TD>
+            </TR>
+ 		    <TR>
+                <TD BORDER="1" ALIGN="LEFT"> Where </TD>
+                <TD BORDER="1" ALIGN="CENTER">ALL_EXCEPT_STANDALONE_TABLES 
+				<br/> ALL_TABLES
+				<br/> ANYWHERE
+				<br/> EVERYWHERE
+				<br/> NOT_SPECIFIED 
+				<br/> NOWHERE
+				<br/> OBJECT_FORMS
+				<br/> PARENTED_TABLES
+				<br/> REFERENCES_PARENT
+				<br/> STANDALONE_TABLES
+			    </TD>
+                <TD BORDER="1" ALIGN="LEFT"> @Property, @Action, @ActionLayout, @PropertyLayout </TD>
+            </TR>
+            <TR>
+                <TD BORDER="1" ALIGN="LEFT"> Optionality </TD>
+                <TD BORDER="1" ALIGN="CENTER"> DEFAULT
+				<br/> MANDATORY
+				<br/> OPTIONAL
+			  </TD>
+                <TD BORDER="1" ALIGN="LEFT"> @Property, @Parameter</TD>
+            </TR>
+    		<TR>
+                <TD BORDER="1" ALIGN="LEFT"> InvokeOn </TD>
+                <TD BORDER="1" ALIGN="CENTER">COLLECTION_ONLY
+				<br/> OBJECT_AND_COLLECTION
+				<br/> OBJECT_ONLY
+			    </TD>
+                <TD BORDER="1" ALIGN="LEFT"> @Action </TD>
+            </TR>
+    		<TR>
+                <TD BORDER="1" ALIGN="LEFT"> RestrictTo </TD>
+                <TD BORDER="1" ALIGN="CENTER">NO_RESTRICTIONS
+				<br/> PROTOPYPING
+			    </TD>
+                <TD BORDER="1" ALIGN="LEFT"> @Action </TD>
+            </TR>
+    		<TR>
+                <TD BORDER="1" ALIGN="LEFT"> SemanticsOf </TD>
+                <TD BORDER="1" ALIGN="CENTER"> IDEMPOTENT<br/>NON_IDEMPOTENT</TD>
+                <TD BORDER="1" ALIGN="LEFT"> @Action </TD>
+            </TR>
+        	<TR>
+                <TD BORDER="1" ALIGN="LEFT"> CssClassFaPosition </TD>
+                <TD BORDER="1" ALIGN="CENTER">LEFT<br/>RIGHT</TD>
+                <TD BORDER="1" ALIGN="LEFT"> @DomainObjectLayout, @ViewModelLayout, @ActionLayout </TD>
+            </TR>
+    		<TR>
+                <TD BORDER="1" ALIGN="LEFT"> Position </TD>
+                <TD BORDER="1" ALIGN="CENTER">BELOW<br/>RIGHT<br/>PANEL<br/>PANEL_DROPDOWN</TD>
+                <TD BORDER="1" ALIGN="LEFT"> @ActionLayout </TD>
+            </TR>
+            <TR>
+                <TD BORDER="1" ALIGN="LEFT"> PromptStyle </TD>
+                <TD BORDER="1" ALIGN="CENTER"> AS_CONFIGURED
+				<br/> DIALOG 
+				<br/> INLINE
+				<br/> INLINE_AS_IF_EDIT
+			  </TD>
+                <TD BORDER="1" ALIGN="LEFT"> @ActionLayout, @PropertyLayout </TD>
+            </TR>
+    		<TR>
+                <TD BORDER="1" ALIGN="LEFT"> LabelPosition</TD>
+                <TD BORDER="1" ALIGN="CENTER">DEFAULT<br/>LEFT<br/>RIGHT<br/>TOP<br/>NONE</TD>
+                <TD BORDER="1" ALIGN="LEFT"> @ParameterLayout, @PropertyLayout </TD>
+            </TR>
+            <TR>
+                <TD BORDER="1" ALIGN="LEFT"> BookmarkPolicy </TD>
+                <TD BORDER="1" ALIGN="CENTER">AS_CHILD<br/>AS_ROOT<br/>NEVER</TD>
+                <TD BORDER="1" ALIGN="LEFT"> @ViewModelLayout, @DomainObjectLayout, @ActionLayout </TD>
+            </TR>
+            <TR>
+                <TD BORDER="1" ALIGN="LEFT"> Contributed </TD>
+                <TD BORDER="1" ALIGN="CENTER">AS_ACTION<br/>AS_ASSOCIATION<br/>AS_BOTH<br/>AS_NEITHER</TD>
+                <TD BORDER="1" ALIGN="LEFT"> @ActionLayout </TD>
+            </TR>
+            <TR>
+                <TD BORDER="1" ALIGN="LEFT"> CommandExecuteIn</TD>
+                <TD BORDER="1" ALIGN="CENTER">AS_ACTION<br/>BACKGROUND<br/>FOREGROUND</TD>
+                <TD BORDER="1" ALIGN="LEFT"> @Action, @Property ??? </TD>
+            </TR>
+            <TR>
+                <TD BORDER="1" ALIGN="LEFT"> CommandPersistence </TD>
+                <TD BORDER="1" ALIGN="CENTER">AS_ACTION<br/>
+					IF_HINTED<br/>
+					NOT_PERSISTED<br/>
+					PERSISTED
+			    </TD>
+                <TD BORDER="1" ALIGN="LEFT"> @Action, @Property ??? </TD>
+            </TR>
+        </TABLE>
+    >]
+    // end enum
+
+    edge [style=dotted arrowhead=none]
+    do -> dol
+    ds -> dsl
+    a -> al
+    p -> pl
+    vm -> vml
+    pm -> pml
+ 
+    jdof [label=<
+        <TABLE ALIGN="LEFT" BORDER="0">
+            <TR>
+                <TD ALIGN="LEFT" BGCOLOR="lightgrey">@javax.jdo.annotations.Persistent</TD>
+                <TD ALIGN="LEFT" BGCOLOR="lightgrey"></TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> table </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT" BGCOLOR="lightgrey">@javax.jdo.annotations.Join</TD>
+                <TD ALIGN="LEFT" BGCOLOR="lightgrey"></TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> column </TD>
+                 <TD ALIGN="LEFT"> String </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT">@javax.jdo.annotations.Element </TD>
+                <TD ALIGN="LEFT"></TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> column </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT" BGCOLOR="lightgrey">@javax.jdo.annotations.Column </TD>
+                <TD ALIGN="LEFT" BGCOLOR="lightgrey"></TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> allowsNull </TD>
+                <TD ALIGN="LEFT"> boolean </TD>
+            </TR>
+        </TABLE> 
+    >]
+    
+    jdoc [label=<
+        <TABLE ALIGN="LEFT" BORDER="0">
+            <TR>
+                <TD ALIGN="LEFT" BGCOLOR="lightgrey">@javax.jdo.annotations.PersistenceCapable</TD>
+                <TD ALIGN="LEFT" BGCOLOR="lightgrey"></TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> identityType </TD>
+                <TD ALIGN="LEFT"> DATASTORE  ... </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT" BGCOLOR="lightgrey">@javax.jdo.annotations.DatastoreIdentity</TD>
+                <TD ALIGN="LEFT" BGCOLOR="lightgrey"></TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> strategy </TD>
+                <TD ALIGN="LEFT"> NATIVE  ... </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> column </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+             <TR>
+                <TD ALIGN="LEFT" BGCOLOR="lightgrey">@javax.jdo.annotations.Version</TD>
+                <TD ALIGN="LEFT" BGCOLOR="lightgrey"></TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> column </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> columns </TD>
+                <TD ALIGN="LEFT"> Column[] </TD>
+            </TR>
+             <TR>
+                <TD ALIGN="LEFT"> customStragtegy </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> extensions </TD>
+                <TD ALIGN="LEFT"> Extension[] </TD>
+            </TR>
+             <TR>
+                <TD ALIGN="LEFT"> indexed </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+             <TR>
+                <TD ALIGN="LEFT"> stragtegy </TD>
+                <TD ALIGN="LEFT"> VersionStrategy </TD>
+            </TR>
+        </TABLE> 
+    >]
+
+    pat [label=<
+        <TABLE ALIGN="LEFT" BORDER="0">
+            <TR>
+                <TD ALIGN="LEFT" BGCOLOR="lightgrey">@javax.validation.constraints.Pattern</TD>
+                <TD ALIGN="LEFT" BGCOLOR="lightgrey"></TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> regex </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> message </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+        </TABLE> 
+    >]
+    
+    i [label="@javax.inject.Inject" fillcolor="lightgrey"] 
+
+    edge [style=dashed arrowhead=none]
+    class -> do, ds, vm, jdoc, i
+    method -> a, pm, sma
+    field -> p, coll, t, pat, mo, jdof, smp
+    
+//	g [label="@lombok.Getter"]
+//	s [label="@lombok.Setter"]
+    //field -> g, s 
+    
+    rank=same {class, method, field}
+    rank=same {dsl, dol, vml, pl}
+    rank=min {jdoc, jdof, enum, i, pat} 
+    
+    // glue nodes together
+    i -> jdoc -> enum -> pat -> jdof [style=invis]
+}
+----
+...
+
+<<<
+
+=== Programming Model Overview
+The FW follows a POJO approach, where classes (DomainObjects, DomainServices, ViewModels), fields (Properties), and methods (Actions) are amended by means of annotations. Plus some 'supporting methods'.
+
+==== Annotations
+They are implemented in: 
+
+* o.a.i.applib.* , some in 
+* javax.jdo.annotations. And of cource
+* javax.inject.Inject for dependency injection.
+
+Applib annotations refer to enumerations, here listed in separately.
+
+==== Supporting Methods
+Some 'Supporting Methods' need to follow strict naming rules, i.e. need to have e certain prefix (disable, hide, validate) followed by a camelcased property or action name.
+Others are part of the interfaces ()
+
+=== Remarks
+* Enumeration values have been extracted from applib annotations and summarised into a table of it's own (results in less redundancy and a more compact layout). References 'within' annotations list their respective default values.
+* JDO annotations are grouped in two blocks - one containes those that refer to classes, the other refers to properties. Not all 
+* 
+
+=== Open issues
+* @Property has CommandReification, CommandExecuteIn, CommandPersistence. What is it use?
+* Will there be a kinf of @Meta for 2.0.0 to wrap/combine JDO annotations?  
+* boolean flags in annotations will be removed and replaced by ... 
+* Are references to @Pattern outdated and can completely be replaced by @Property.regexPattern* ?
+
+=== References
+[1] Coad:  Modeling in Color
+[width="100%"]
+|=======
+|Coad Color |Coad Description |Color here |here used for 
+|pink |moment-intervals |red | method
+|green |entities (party/place/thing) |green |class
+|yellow |roles |orange |property
+|blue |descriptions |blue |layout
+|=======
+ 

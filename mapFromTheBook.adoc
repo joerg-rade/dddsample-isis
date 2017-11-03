@@ -5,17 +5,19 @@
 [graphviz, tacticalLevel, svg]
 ----
 digraph g {
-    node [fontname=arial] 
-    edge [fontname=arial] 
+    overlap=false
+    layout=fdp
+    node [fontname=arial style=filled fillcolor=white] 
+    edge [fontname=arial fontsize=10] 
 
     mdd [label="Model\nDriven\nDesign"]
-    svc [label="Services"]
-    de [label="Domain\nEvents"]
-    rep [label="Repositories"]
+    svc [label="Services" fillcolor=lightblue]
+    de [label="Domain\nEvents" fillcolor=lightblue]
+    rep [label="Repositories" fillcolor=lightblue]
     ag [label="Aggregates"]
-    e [label="Entities"]
-    vo [label="Value\nObjects"]
-    fct [label="Factories"]
+    e [label="Entities" fillcolor=lightblue]
+    vo [label="Value\nObjects" fillcolor=lightblue]
+    fct [label="Factories" fillcolor=lightblue]
     sui [label="Smart\nUI"]
     la [label="Layered\nArchitecture"]
     
@@ -45,9 +47,10 @@ digraph g {
 [graphviz, conceptualLevel, svg]
 ----
 digraph g {
-    layout=dot 
+    overlap=false
+    layout=dot   
     node [fontname=arial] 
-    edge [fontname=arial] 
+    edge [fontname=arial fontsize=10] 
 
     mdd [label="Model Driven\nDesign"]
     ul [label="Ubiquitious Language"]

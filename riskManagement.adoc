@@ -1,0 +1,114 @@
+
+.Apache Isis - Risk Types
+[graphviz, riskTypes, svg]
+----
+digraph g {
+    layout=circo
+    node [fontname=arial fontcolor=white style=filled] 
+    edge [fontname=arial arrowhead=none] 
+
+    r [label="IT Risks" fillcolor=white fontcolor=black]
+
+    node [shape=folder]
+    
+    // Enterprise
+    er [fillcolor=tan label=< 
+    <BR/> <B>Executive Risk</B><BR/><BR/> 
+    Alignment with other intiatives<BR/>
+    Commitment<BR/>
+    Sponsorship<BR/> 
+    Support <BR/> > ]
+    r -> er
+    
+    // Project
+    pr [fillcolor=red label=< 
+    <BR/> <B>Project Risk</B><BR/><BR/> 
+    Scope<BR/>
+    Planning<BR/>
+    Controls<BR/> 
+    Monitoring<BR/>
+    Program management<BR/>
+    Decision making<BR/>
+    Tools and methodologies<BR/>>]
+    r -> pr
+    
+    // Functional
+    fr [fillcolor=blue label=< 
+    <BR/> <B>Functional Risk</B>  <BR/><BR/>
+    Missing requirements <BR/> 
+    Business process control  <BR/>
+    Monitoring  <BR/> 
+    Promised functionality  <BR/>
+    Bolt-ons <BR/>
+    <i><b> Reliability, usability </b></i><BR/> 
+    Legacy system integration <BR/> >]
+    r -> fr
+    
+    // Resource
+    rr [fillcolor=gold label=< 
+    <BR/> <B>Resource Risk</B> <BR/><BR/>
+    Time schedules <BR/>
+    Budgets <BR/>
+    Dedicated resources <BR/>
+    Competing priorities <BR/>
+    Missed milestones <BR/> > ]
+    r -> rr
+
+    // Organizational
+    or [fillcolor=brown label=< 
+    <BR/> <B>Organizational Risk</B> <BR/><BR/>
+    <i><b> Staffing </b></i><BR/>   
+    Training <BR/>
+    Communication <BR/>
+    Release integration <BR/>
+    Application control <BR/> 
+    Business continuity <BR/>
+    Change management <BR/>
+    Oranizational alignment <BR/>
+    Business process redesign <BR/> > ]
+    r -> or
+    
+    // Technical
+    tr [fillcolor=green label=< 
+    <BR/> <B>Technical Risk</B> <BR/><BR/> 
+    Hardware, software <BR/>
+    Data Conversion <BR/>   
+    <i><b>System architecture </b></i><BR/>   
+    Disaster recovery <BR/>   
+    <i><b>Networking </b></i><BR/>   
+    <i><b>Performance </b></i><BR/>   
+    Sizing <BR/>   
+    <i><b>Security </b></i><BR/>   
+    <i><b>Availability </b></i> <BR/>  >]
+    r -> tr 
+}
+----
+.Legend
+
+
+
+.References
+* Tip for Mitigating Risks [https://aspireopenmic.com/2011/06/30/tip-for-mitigating-risks-during-your-sap-erp-hcm-projects/] 
+
+
+.Applicable Risks (rated)
+[options="header"]
+|=======================
+|Risk Title             |Impact     |Severity | Probability
+|Reliability, usability |User satiscation|medium | low
+|Staffing               |development speed |medium | low
+|System architecture    |Scalability |high | low
+|Networking             |User Interface |high | medium
+|Performance            |Data Access |medium | low
+|Security               |Vulnerabilities +
+(via 3rd party libs) |high | high
+|Availability           |Stability|low | low
+|=======================
+
+IMO the only seriuos points are
+* Networking and
+* Security
+
+Network (Server-Client Communication) Issues can be addressed by using a custom client using the RESTful API and the possibility to tailor the JSON structure to requirements without code change.
+
+Security - Vulnaribilities need to be addressed by FW development ASAP.

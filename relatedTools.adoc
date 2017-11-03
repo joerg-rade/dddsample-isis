@@ -1,0 +1,58 @@
+.Apache Isis - Related Tools
+[graphviz, relatedTools, svg]
+----
+digraph g {
+    overlap=false
+    layout=dot 
+    node [fontname=arial style=filled fillcolor=white] 
+    edge [fontname=arial fontsize=10] 
+
+    ai [label="Apache\nIsis"]
+    ac [label="Apache\nCamel"] 
+    
+    dn [label="<<ORM>>\nDataNucleus" URL="https://en.wikipedia.org/wiki/DataNucleus"]
+    
+    ro [label="Restful\n Objects\nSpecification" URL="https://en.wikipedia.org/wiki/Restful_Objects"]
+    
+    aw [label="Apache\nWicket"]
+    am [label="Apache\nMaven"]
+    
+    ej [label="<<Servlet Container>>\nEclipse Jetty"]
+    
+    s [label="<<OpenAPI>>\nSwagger"  URL="https://en.wikipedia.org/wiki/OpenAPI_Specification"]
+    
+    re [label="<<JAX-RS>>\nRestEasy" URL="https://en.wikipedia.org/wiki/Java_API_for_RESTful_Web_Services"]
+
+    ai -> ac [label="<<optionall>>\nuse as\nexternal\n event bus" style=dashed]
+    ai -> dn [label="persistence\n(JDO JPA NoSQL)"]
+    ai -> re [label="uses"]
+    re -> ro [label="to implement"]
+    s -> ro [label="verify/\ndocument"]
+    ai -> aw [label="automatically\n generate UI\nwith"] 
+    
+    ai -> am [label="use to build"] 
+    ai -> ej [label="default"]  
+    
+    // notes
+    node[shape=note fontsize=20 fillcolor=gold]
+    edge [style=dashed arrowhead=none]
+    
+    dn_note [label=<
+    Used by ApacheHive<BR/>
+    which in turn is used by<BR/> <B>NetFlix</B> >] 
+    dn -> dn_note 
+    
+    osgi [label=<
+    OSGi compliant >] 
+    dn -> osgi
+    aw -> osgi
+    ac -> osgi 
+    ej -> osgi
+    re -> osgi 
+    ai -> osgi [color=red label="not yet"]
+}
+----
+
+.References
+OSGi friendly bytecode weaving https://www.slideshare.net/mfrancis/bytecode-weaving-in-osgi-enhance-your-classes-not-your-dependency-graph-tim-ward +
+JDO Enhancement Guide (v5.0) http://www.datanucleus.org/products/datanucleus/jdo/enhancer.html
