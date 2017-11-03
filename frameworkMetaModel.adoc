@@ -178,7 +178,7 @@ digraph g {
                 <TD ALIGN="LEFT"> Class&lt;? extends Specification[]&gt; </TD>
             </TR>
             <TR>
-                <TD ALIGN="LEFT"> notPersisted </TD>
+                <TD ALIGN="LEFT"> notAudited </TD>
                 <TD ALIGN="LEFT"> boolean </TD>
             </TR>
             <TR>
@@ -295,7 +295,7 @@ digraph g {
             </TR>
             <TR>
                 <TD ALIGN="LEFT"> commandPersistence </TD>
-                <TD ALIGN="LEFT"> CommandPersistence </TD>
+                <TD ALIGN="LEFT"> CommandPersistence.PERSISTED </TD>
             </TR>
             <TR>
                 <TD ALIGN="LEFT"> domainEvent </TD>
@@ -787,12 +787,12 @@ digraph g {
             </TR>
             <TR>
                 <TD BORDER="1" ALIGN="LEFT"> CommandExecuteIn</TD>
-                <TD BORDER="1" ALIGN="CENTER">AS_ACTION<br/>BACKGROUND<br/>FOREGROUND</TD>
+                <TD BORDER="1" ALIGN="CENTER">BACKGROUND<br/>FOREGROUND</TD>
                 <TD BORDER="1" ALIGN="LEFT"> @Action, @Property ??? </TD>
             </TR>
             <TR>
                 <TD BORDER="1" ALIGN="LEFT"> CommandPersistence </TD>
-                <TD BORDER="1" ALIGN="CENTER">AS_ACTION<br/>
+                <TD BORDER="1" ALIGN="CENTER">
 					IF_HINTED<br/>
 					NOT_PERSISTED<br/>
 					PERSISTED
