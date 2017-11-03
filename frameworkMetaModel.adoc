@@ -955,16 +955,15 @@ Applib annotations refer to enumerations, here listed in separately.
 
 ==== Supporting Methods
 Some 'Supporting Methods' need to follow strict naming rules, i.e. need to have e certain prefix (disable, hide, validate) followed by a camelcased property or action name.
-Others are part of the interfaces ()
+title()is somewhat special ...
 
 === Remarks
 * Enumeration values have been extracted from applib annotations and summarised into a table of it's own (results in less redundancy and a more compact layout). References 'within' annotations list their respective default values.
-* JDO annotations are grouped in two blocks - one containes those that refer to classes, the other refers to properties. Not all 
-* 
+* JDO annotations are grouped in two blocks - one containes those that refer to classes, the other refers to properties. Not complete yet. 
 
 === Open issues
-* @Property has CommandReification, CommandExecuteIn, CommandPersistence. What is it use?
-* Will there be a kinf of @Meta for 2.0.0 to wrap/combine JDO annotations?  
+* @Property has CommandReification, CommandExecuteIn, CommandPersistence. What is it's use?
+* Will there be a kind of @Meta for 2.0.0 to wrap/combine JDO annotations?  
 * boolean flags in annotations will be removed and replaced by ... 
 * Are references to @Pattern outdated and can completely be replaced by @Property.regexPattern* ?
 
