@@ -922,7 +922,7 @@ digraph g {
 
     edge [style=dashed arrowhead=none]
     class -> do, ds, vm, jdoc, i
-    method -> a, pm, sma
+    method -> a, pm, sma, mo
     field -> p, coll, t, pat, mo, jdof, smp
     
 //	g [label="@lombok.Getter"]
