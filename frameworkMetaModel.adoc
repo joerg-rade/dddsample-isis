@@ -23,6 +23,7 @@ digraph g {
                 <TD ALIGN="LEFT">@DomainObject</TD>
                 <TD ALIGN="LEFT"></TD>
             </TR>
+            <HR/>
             <TR>
                 <TD ALIGN="LEFT">auditing</TD>
                 <TD ALIGN="LEFT">Auditing.AS_CONFIGURED</TD>
@@ -36,8 +37,8 @@ digraph g {
                 <TD ALIGN="LEFT">Class</TD>
             </TR>
             <TR>
-                <TD ALIGN="LEFT">bounded</TD>
-                <TD ALIGN="LEFT">boolean</TD>
+                <TD ALIGN="LEFT"> bounding </TD>
+                <TD ALIGN="LEFT"> Bounding.NOT_SPECIFIED </TD>
             </TR>
             <TR>
                 <TD ALIGN="LEFT">createdLifecycleEvent</TD>
@@ -188,18 +189,6 @@ digraph g {
             <TR>
                 <TD ALIGN="LEFT">publishing</TD>
                 <TD ALIGN="LEFT">Publishing.AS_CONFIGURED</TD>
-            </TR>
-            <TR>
-                <TD ALIGN="LEFT"> regexPattern </TD>
-                <TD ALIGN="LEFT"> String</TD>
-            </TR>
-            <TR>
-                <TD ALIGN="LEFT"> regexPatternFlags </TD>
-                <TD ALIGN="LEFT"> int </TD>
-            </TR>
-            <TR>
-                <TD ALIGN="LEFT"> regexPatternReplacement </TD>
-                <TD ALIGN="LEFT"> String </TD>
             </TR>
         </TABLE> 
     >] 
@@ -366,6 +355,23 @@ digraph g {
         </TABLE> 
     >] 
 
+    // SoppoprtingMetods
+    node [fontcolor=black fontname=Courier]
+    smc[fillcolor="#C5F285" label=<
+        <TABLE ALIGN="LEFT" BORDER="0">
+            <TR>
+                <TD ALIGN="LEFT"> SupportingMethods (Object) </TD>
+                <TD ALIGN="LEFT"> return value</TD>
+            </TR>
+            <HR />
+            <TR>
+                <TD ALIGN="LEFT"> title() </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
+
+        </TABLE> 
+    >] 
+    
     sma[fillcolor="#FF8C88" label=<
         <TABLE ALIGN="LEFT" BORDER="0">
             <TR>
@@ -385,12 +391,6 @@ digraph g {
                 <TD ALIGN="LEFT"> validateXXX() </TD>
                 <TD ALIGN="LEFT"> String \| ... </TD>
             </TR>
-        <HR/>
-            <TR>
-                <TD ALIGN="LEFT"> title() </TD>
-                <TD ALIGN="LEFT"> String </TD>
-            </TR>
-
         </TABLE> 
     >] 
 
@@ -420,7 +420,7 @@ digraph g {
         </TABLE> 
     >] 
     /* Layouts */
-    node[fillcolor="#4181BD"] //blue
+    node[fontcolor=white fontname=Helvetica fillcolor="#4181BD"] //blue
     dol [label=<
         <TABLE ALIGN="LEFT" BORDER="0">
             <TR>
@@ -690,14 +690,15 @@ digraph g {
                 <TD BORDER="1" ALIGN="LEFT" BGCOLOR="lightgrey">Referenced in</TD>
             </TR>
             <TR>
-                <TD BORDER="1" ALIGN="LEFT"> Auditing, Editing, Publishing, CommandReification</TD>
-                <TD BORDER="1" ALIGN="CENTER">
-                    AS_CONFIGURED<br/>
-                    DISABLED<br/>
-                    ENABLED
-                </TD>
-                <TD BORDER="1" ALIGN="LEFT"> @DomainObject, @Property, @Collection, @Action</TD>
+                <TD BORDER="1" ALIGN="LEFT"> Auditing<br/> Editing<br/> Publishing<br/> CommandReification</TD>
+                <TD BORDER="1" ALIGN="CENTER">AS_CONFIGURED<br/>DISABLED<br/>ENABLED</TD>
+                <TD BORDER="1" ALIGN="LEFT"> @DomainObject<br/> @Property<br/>@Collection<br/>@Action</TD>
             </TR>
+            <TR>
+                <TD BORDER="1" ALIGN="LEFT"> Bounding </TD>
+                <TD BORDER="1" ALIGN="CENTER">DISABLED<br/>ENABLED<br/>NOT_SPECIFIED</TD>
+                <TD BORDER="1" ALIGN="LEFT"> @DomainObject</TD>
+            </TR>            
             <TR>
                 <TD BORDER="1" ALIGN="LEFT"> NatureOfService </TD>
                 <TD BORDER="1" ALIGN="CENTER">DOMAIN<br/>VIEW<br/>VIEW_CONTRIBUTION	<br/>VIEW_MENU_ONLY<br/> VIEW_REST_ONLY</TD>
@@ -721,7 +722,7 @@ digraph g {
 				<br/> REFERENCES_PARENT
 				<br/> STANDALONE_TABLES
 			    </TD>
-                <TD BORDER="1" ALIGN="LEFT"> @Property, @Action, @ActionLayout, @PropertyLayout </TD>
+                <TD BORDER="1" ALIGN="LEFT"> @Property<br/>@Action<br/>@ActionLayout<br/>@PropertyLayout </TD>
             </TR>
             <TR>
                 <TD BORDER="1" ALIGN="LEFT"> Optionality </TD>
@@ -729,7 +730,7 @@ digraph g {
 				<br/> MANDATORY
 				<br/> OPTIONAL
 			  </TD>
-                <TD BORDER="1" ALIGN="LEFT"> @Property, @Parameter</TD>
+                <TD BORDER="1" ALIGN="LEFT"> @Property<br/>@Parameter</TD>
             </TR>
     		<TR>
                 <TD BORDER="1" ALIGN="LEFT"> InvokeOn </TD>
@@ -754,7 +755,7 @@ digraph g {
         	<TR>
                 <TD BORDER="1" ALIGN="LEFT"> CssClassFaPosition </TD>
                 <TD BORDER="1" ALIGN="CENTER">LEFT<br/>RIGHT</TD>
-                <TD BORDER="1" ALIGN="LEFT"> @DomainObjectLayout, @ViewModelLayout, @ActionLayout </TD>
+                <TD BORDER="1" ALIGN="LEFT"> @DomainObjectLayout<br/>@ViewModelLayout<br/>@ActionLayout </TD>
             </TR>
     		<TR>
                 <TD BORDER="1" ALIGN="LEFT"> Position </TD>
@@ -768,17 +769,17 @@ digraph g {
 				<br/> INLINE
 				<br/> INLINE_AS_IF_EDIT
 			  </TD>
-                <TD BORDER="1" ALIGN="LEFT"> @ActionLayout, @PropertyLayout </TD>
+                <TD BORDER="1" ALIGN="LEFT"> @ActionLayout<br/>@PropertyLayout </TD>
             </TR>
     		<TR>
                 <TD BORDER="1" ALIGN="LEFT"> LabelPosition</TD>
                 <TD BORDER="1" ALIGN="CENTER">DEFAULT<br/>LEFT<br/>RIGHT<br/>TOP<br/>NONE</TD>
-                <TD BORDER="1" ALIGN="LEFT"> @ParameterLayout, @PropertyLayout </TD>
+                <TD BORDER="1" ALIGN="LEFT"> @ParameterLayout<br/>@PropertyLayout </TD>
             </TR>
             <TR>
                 <TD BORDER="1" ALIGN="LEFT"> BookmarkPolicy </TD>
                 <TD BORDER="1" ALIGN="CENTER">AS_CHILD<br/>AS_ROOT<br/>NEVER</TD>
-                <TD BORDER="1" ALIGN="LEFT"> @ViewModelLayout, @DomainObjectLayout, @ActionLayout </TD>
+                <TD BORDER="1" ALIGN="LEFT"> @ViewModelLayout<br/>@DomainObjectLayout<br/>@ActionLayout </TD>
             </TR>
             <TR>
                 <TD BORDER="1" ALIGN="LEFT"> Contributed </TD>
@@ -788,7 +789,7 @@ digraph g {
             <TR>
                 <TD BORDER="1" ALIGN="LEFT"> CommandExecuteIn</TD>
                 <TD BORDER="1" ALIGN="CENTER">BACKGROUND<br/>FOREGROUND</TD>
-                <TD BORDER="1" ALIGN="LEFT"> @Action, @Property ??? </TD>
+                <TD BORDER="1" ALIGN="LEFT"> @Action<br/>@Property ??? </TD>
             </TR>
             <TR>
                 <TD BORDER="1" ALIGN="LEFT"> CommandPersistence </TD>
@@ -797,11 +798,11 @@ digraph g {
 					NOT_PERSISTED<br/>
 					PERSISTED
 			    </TD>
-                <TD BORDER="1" ALIGN="LEFT"> @Action, @Property ??? </TD>
+                <TD BORDER="1" ALIGN="LEFT"> @Action<br/>@Property ??? </TD>
             </TR>
         </TABLE>
     >]
-    // end enum
+    // end enum 
 
     edge [style=dotted arrowhead=none]
     do -> dol
@@ -921,8 +922,8 @@ digraph g {
     i [label="@javax.inject.Inject" fillcolor="lightgrey"] 
 
     edge [style=dashed arrowhead=none]
-    class -> do, ds, vm, jdoc, i
-    method -> a, pm, sma, mo
+    class -> do, ds, vm, jdoc, i, smc
+    method -> a, pm, sma
     field -> p, coll, t, pat, mo, jdof, smp
     
 //	g [label="@lombok.Getter"]
@@ -951,7 +952,7 @@ They are implemented in:
 * javax.jdo.annotations. And of cource
 * javax.inject.Inject for dependency injection.
 
-Applib annotations refer to enumerations, here listed in separately.
+Applib annotations refer to enumerations, here listed separately.
 
 ==== Supporting Methods
 Some 'Supporting Methods' need to follow strict naming rules, i.e. need to have e certain prefix (disable, hide, validate) followed by a camelcased property or action name.
@@ -961,11 +962,12 @@ title()is somewhat special ...
 * Enumeration values have been extracted from applib annotations and summarised into a table of it's own (results in less redundancy and a more compact layout). References 'within' annotations list their respective default values.
 * JDO annotations are grouped in two blocks - one containes those that refer to classes, the other refers to properties. Not complete yet. 
 
+=== TODO
+* fork: 2.0.0 branch  
+* replace all boolean flags in annotations with respective
+* remove @Property.regexPattern* ?
+
 === Open issues
-* @Property has CommandReification, CommandExecuteIn, CommandPersistence. What is it's use?
-* Will there be a kind of @Meta for 2.0.0 to wrap/combine JDO annotations?  
-* boolean flags in annotations will be removed and replaced by ... 
-* Are references to @Pattern outdated and can completely be replaced by @Property.regexPattern* ?
 
 === References
 [1] Coad:  Modeling in Color
