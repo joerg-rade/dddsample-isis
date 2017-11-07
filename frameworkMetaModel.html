@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.5.dev">
-<title>Programming Model Overview</title>
+<title>Open issues</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -424,7 +424,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="content">
 <div class="imageblock">
 <div class="content">
-<img src="ProgrammingModel-Overview.svg" alt="ProgrammingModel Overview.svg">
+<img src="ProgrammingModel-Overview.png" alt="ProgrammingModel Overview.png">
 </div>
 <div class="title">Figure 1. ProgrammingModel-Overview</div>
 </div>
@@ -432,6 +432,47 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>&#8230;&#8203;</p>
 </div>
 <div style="page-break-after: always;"></div>
+<div class="sect2">
+<h3 id="trueopen-issues"><a class="anchor" href="#trueopen-issues"></a>Open issues</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>€PublishingChangeKind is not used by any annotation in o.a.i.applib.annotation</p>
+</li>
+<li>
+<p>@Defaulted, @EqualByContent will stay in 2.0?</p>
+</li>
+<li>
+<p>@Facets, @Mixin (rather advanced, haven&#8217;t used it by now). To be included/detailed in diagram?</p>
+</li>
+<li>
+<p>@MinLength related to Parameter, ParameterLayout - can be integrated there?</p>
+</li>
+<li>
+<p>@Programmatic will be obsoleted by @Action(&#8230;&#8203;)?</p>
+</li>
+<li>
+<p>@ActionLayout, @ViewModelLayout, @DomainObjectLayout still reference cssClassFa and cssClassFaPosition. To be replaced by ''/labelPosition?</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="trueremarks"><a class="anchor" href="#trueremarks"></a>Remarks</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>@ParameterLayout: regexPattern, regexPatternFlags, regexPatternReplacement  omitted - @Pattern to be used</p>
+</li>
+<li>
+<p>Enumeration values have been extracted from applib annotations and summarised into a table of it&#8217;s own when used in more than one annotation (results in less redundancy and a more compact layout). Enums referenced only by one annotations list their respective values 'inline'.</p>
+</li>
+<li>
+<p>JDO annotations are grouped in two blocks - one containes those that refer to classes, the other refers to properties. Not complete yet.</p>
+</li>
+</ul>
+</div>
+</div>
 <div class="sect2">
 <h3 id="trueprogramming-model-overview"><a class="anchor" href="#trueprogramming-model-overview"></a>Programming Model Overview</h3>
 <div class="paragraph">
@@ -463,41 +504,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h4 id="truesupporting-methods"><a class="anchor" href="#truesupporting-methods"></a>Supporting Methods</h4>
 <div class="paragraph">
 <p>Some 'Supporting Methods' need to follow strict naming rules, i.e. need to have e certain prefix (disable, hide, validate) followed by a camelcased property or action name.
-title()is somewhat special &#8230;&#8203;</p>
+title()is somewhat special insofar as it refers to a class / DomainObject only.</p>
 </div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="trueremarks"><a class="anchor" href="#trueremarks"></a>Remarks</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Enumeration values have been extracted from applib annotations and summarised into a table of it&#8217;s own (results in less redundancy and a more compact layout). References 'within' annotations list their respective default values.</p>
-</li>
-<li>
-<p>JDO annotations are grouped in two blocks - one containes those that refer to classes, the other refers to properties. Not complete yet.</p>
-</li>
-</ul>
 </div>
 </div>
 <div class="sect2">
 <h3 id="truetodo"><a class="anchor" href="#truetodo"></a>TODO</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>fork: 2.0.0 branch</p>
-</li>
-<li>
-<p>replace all boolean flags in annotations with respective</p>
-</li>
-<li>
-<p>remove @Property.regexPattern* ?</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="trueopen-issues"><a class="anchor" href="#trueopen-issues"></a>Open issues</h3>
 
 </div>
 <div class="sect2">
@@ -549,7 +561,7 @@ title()is somewhat special &#8230;&#8203;</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-04 17:35:42 MZ
+Last updated 2017-11-07 16:58:56 MZ
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
