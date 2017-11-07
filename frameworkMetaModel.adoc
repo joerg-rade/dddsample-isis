@@ -304,7 +304,7 @@ digraph g {
             </TR>
             <TR>
                 <TD ALIGN="LEFT"> restrictTo </TD>
-                <TD ALIGN="LEFT"> RestrictTo.<b>NO_RESTRICTIONS<b/> <br/> PROTOPYPING </TD>
+                <TD ALIGN="LEFT"> RestrictTo.<b>NO_RESTRICTIONS</b> <br/> PROTOPYPING </TD>
             </TR>
             <TR>
                 <TD ALIGN="LEFT"> semantics </TD>
