@@ -98,25 +98,25 @@ digraph g {
     ds [label=<
         <TABLE ALIGN="LEFT" BORDER="0">
             <TR>
-                <TD ALIGN="LEFT">@DomainService</TD>
+                <TD ALIGN="LEFT"> @DomainService </TD>
                 <TD ALIGN="LEFT"></TD>
             </TR>
             <HR />
             <TR>
-                <TD ALIGN="LEFT">menuOrder</TD>
-                <TD ALIGN="LEFT">String (e.g. 10.5.1)</TD>
+                <TD ALIGN="LEFT"> menuOrder </TD>
+                <TD ALIGN="LEFT"> String </TD>
             </TR>
             <TR>
-                <TD ALIGN="LEFT">nature</TD>
-                <TD ALIGN="LEFT">NatureOfService.Domain<br/><b>VIEW</b><br/>VIEW_CONTRIBUTION<br/>VIEW_MENU_ONLY<br/>VIEW_REST_ONLY</TD>
+                <TD ALIGN="LEFT"> nature</TD>
+                <TD ALIGN="LEFT"> NatureOfService.Domain <br/> <b>VIEW</b> <br/> VIEW_CONTRIBUTION <br/> VIEW_MENU_ONLY <br/> VIEW_REST_ONLY </TD>
             </TR>
             <TR>
-                <TD ALIGN="LEFT">objectType</TD>
-                <TD ALIGN="LEFT">String</TD>
+                <TD ALIGN="LEFT"> objectType </TD>
+                <TD ALIGN="LEFT"> String </TD>
             </TR>
             <TR>
-                <TD ALIGN="LEFT">repositoryFor</TD>
-                <TD ALIGN="LEFT">Class[?]</TD>
+                <TD ALIGN="LEFT"> repositoryFor </TD>
+                <TD ALIGN="LEFT"> Class&lt;?&gt; </TD>
             </TR>
         </TABLE> 
     >] 
