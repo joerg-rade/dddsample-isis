@@ -293,7 +293,7 @@ digraph g {
             <TR>
                 <TD ALIGN="LEFT"> hidden </TD>
                 <TD ALIGN="LEFT"> Where.NOWHERE</TD>
-            </TR>
+            </TR>Class[
             <TR>
                 <TD ALIGN="LEFT"> invokeOn </TD>
                 <TD ALIGN="LEFT"> InvokeOn.COLLECTION_ONLY <br/> OBJECT_AND_COLLECTION <br/> <b>OBJECT_ONLY</b> </TD>
@@ -304,7 +304,7 @@ digraph g {
             </TR>
             <TR>
                 <TD ALIGN="LEFT"> restrictTo </TD>
-                <TD ALIGN="LEFT"> RestrictTo.NO_RESTRICTIONS </TD>
+                <TD ALIGN="LEFT"> RestrictTo.<b>NO_RESTRICTIONS<b/> <br/> PROTOPYPING </TD>
             </TR>
             <TR>
                 <TD ALIGN="LEFT"> semantics </TD>
@@ -764,7 +764,7 @@ SAFE_AND_REQUEST_CACHEABLE<br/> </TD>
                 <TD BORDER="1" ALIGN="CENTER"> @Collection <br/> @Property </TD>
             </TR>
             <TR>
-                <TD BORDER="1" ALIGN="LEFT"> Optionality </TD>
+                <TD BORDER="1" ALIGN="CENTER"> Optionality </TD>
                 <TD BORDER="1" ALIGN="CENTER"> DEFAULT <br/> MANDATORY <br/> OPTIONAL </TD>
                 <TD BORDER="1" ALIGN="CENTER"> @Property <br/> @Parameter </TD>
             </TR>
@@ -774,7 +774,7 @@ SAFE_AND_REQUEST_CACHEABLE<br/> </TD>
                 <TD BORDER="1" ALIGN="CENTER"> @ActionLayout <br/> @PropertyLayout </TD>
             </TR>
            <TR>
-                <TD BORDER="1" ALIGN="LEFT"> RenderDay </TD>
+                <TD BORDER="1" ALIGN="CENTER"> RenderDay </TD>
                 <TD BORDER="1" ALIGN="CENTER"> AS_DAY <br/> AS_DAY_BEFORE <br/> NOT_SPECIFIED  </TD>
                 <TD BORDER="1" ALIGN="CENTER"> @ParameterLayout <br/> @PropertyLayout </TD>
             </TR>
