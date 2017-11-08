@@ -5,17 +5,17 @@ digraph g {
     //circo dot fdp neato nop nop1 nop2 osage patchwork sfdp twopi
     layout=dot
     rankdir=LR  
-    node [fontname=Helvetica fontsize=16 style=filled fontcolor=white]
+    node [shape=record fontname=Helvetica fontsize=16 penwidth=8]
     
     // uml meta class model
     node [shape=box] 
-    class [label="<<Java>>\nClass" fillcolor="#9BBB59"]
-    field [label="<<Java>>\nField" fillcolor="#F79646"]
-    method [label="<<Java>>\nMethod" fillcolor="#C0504D"]
+    class [label="<<Java>>\nClass" color="#9BBB59"]
+    field [label="<<Java>>\nField" color="#F79646"]
+    method [label="<<Java>>\nMethod" color="#C0504D"]
     class -> field [headlabel="0..n"]
     class -> method [headlabel="0..n"]
 
-    node[shape=record fillcolor="#9BBB59"] //green
+    node[color="#9BBB59"] //green
 
     do [label=<
         <TABLE ALIGN="LEFT" BORDER="0">
@@ -130,7 +130,7 @@ digraph g {
         </TABLE> 
     >] 
 
-    node[fillcolor="#F79646" fontcolor=white] //yellow / orange
+    node[color="#F79646"] //yellow / orange
     p[label=<
         <TABLE ALIGN="LEFT" BORDER="0">
             <TR>
@@ -266,7 +266,7 @@ digraph g {
         </TABLE> 
     >] 
 
-    node[fillcolor="#C0504D" fontcolor=white] //pink / red
+    node[color="#C0504D"] //pink / red
     a [label=<
         <TABLE ALIGN="LEFT" BORDER="0">
             <TR>
@@ -359,8 +359,8 @@ SAFE_AND_REQUEST_CACHEABLE<br/> </TD>
     >] 
 
     // SoppoprtingMetods
-    node [fontcolor=black fontname=Courier]
-    smc [fillcolor="#C5F285" label=<
+    node [fontname=Courier]
+    smc [color="#C5F285" label=<
         <TABLE ALIGN="LEFT" BORDER="0">
             <TR>
                 <TD ALIGN="LEFT"> SupportingMethods (Object) </TD>
@@ -375,7 +375,7 @@ SAFE_AND_REQUEST_CACHEABLE<br/> </TD>
         </TABLE> 
     >] 
     
-    sma [fillcolor="#FF8C88" label=<
+    sma [color="#FF8C88" label=<
         <TABLE ALIGN="LEFT" BORDER="0">
             <TR>
                 <TD ALIGN="LEFT"> SupportingMethods (Action) </TD>
@@ -397,7 +397,7 @@ SAFE_AND_REQUEST_CACHEABLE<br/> </TD>
         </TABLE> 
     >] 
 
-    smp [fillcolor="#FFBB85" label=<
+    smp [color="#FFBB85" label=<
         <TABLE ALIGN="LEFT" BORDER="0">
             <TR>
                 <TD ALIGN="LEFT"> SupportingMethods (Property) </TD>
@@ -424,7 +424,7 @@ SAFE_AND_REQUEST_CACHEABLE<br/> </TD>
     >] 
     
     /* Layouts */
-    node[fontcolor=white fontname=Helvetica fillcolor="#4181BD"] //blue
+    node[fontname=Helvetica color="#4181BD"] //blue
     dol [label=<
         <TABLE ALIGN="LEFT" BORDER="0">
             <TR>
@@ -478,20 +478,20 @@ SAFE_AND_REQUEST_CACHEABLE<br/> </TD>
     dsl [label=<
         <TABLE ALIGN="LEFT" BORDER="0">
             <TR>
-                <TD ALIGN="LEFT">@DomainServiceLayout</TD>
+                <TD ALIGN="LEFT"> @DomainServiceLayout </TD>
                 <TD ALIGN="LEFT"></TD>
             </TR>
             <HR />
+           <TR>
+                <TD ALIGN="LEFT"> named </TD>
+                <TD ALIGN="LEFT"> String </TD>
+            </TR>
             <TR>
                 <TD ALIGN="LEFT"> menuBar </TD>
-                <TD ALIGN="LEFT"> MenuBar </TD>
+                <TD ALIGN="LEFT"> MenuBar.PRIMARY <br/> SECONDARY <br/> TERTIARY <br/> <b>NOT_SPECIFIED</b> </TD>
             </TR>
             <TR>
                 <TD ALIGN="LEFT"> menuOrder </TD>
-                <TD ALIGN="LEFT"> String </TD>
-            </TR>
-           <TR>
-                <TD ALIGN="LEFT"> named </TD>
                 <TD ALIGN="LEFT"> String </TD>
             </TR>
         </TABLE> 
@@ -725,8 +725,7 @@ SAFE_AND_REQUEST_CACHEABLE<br/> </TD>
     >]   
     
     // Enumerations
-    node [fillcolor = white fontcolor=black]
-    enum [shape=none label=<
+    enum [label=<
         <TABLE BORDER="0">
             <TR>
                 <TD BORDER="1" ALIGN="LEFT" BGCOLOR="lightgrey">Enumerations</TD>
@@ -791,7 +790,7 @@ SAFE_AND_REQUEST_CACHEABLE<br/> </TD>
 				<br/> REFERENCES_PARENT
 				<br/> STANDALONE_TABLES
 			    </TD>
-                <TD BORDER="1" ALIGN="CENTER"> @Property <br/> @Action <br/> @ActionLayout <br/> @PropertyLayout </TD>
+                <TD BORDER="1" ALIGN="CENTER"> @Action / @ActionLayout <br/> @Property / @PropertyLayout <br/> @CollectionLayout </TD>
             </TR>
         </TABLE>
     >]
@@ -825,8 +824,8 @@ SAFE_AND_REQUEST_CACHEABLE<br/> </TD>
                  <TD ALIGN="LEFT"> String </TD>
             </TR>
             <TR>
-                <TD ALIGN="LEFT">@javax.jdo.annotations.Element </TD>
-                <TD ALIGN="LEFT"></TD>
+                <TD ALIGN="LEFT" BGCOLOR="lightgrey">@javax.jdo.annotations.Element </TD>
+                <TD ALIGN="LEFT" BGCOLOR="lightgrey"></TD>
             </TR>
             <TR>
                 <TD ALIGN="LEFT"> column </TD>
