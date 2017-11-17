@@ -1,0 +1,37 @@
+.References
+* Evans, Eric: Domain Driven Design. Tackling Complexity in the Heart of Software 
+
+.Domain Driven Design - Tactical Level
+[graphviz, history, png]
+----
+digraph g {
+    overlap=false
+    layout=dot 
+    rankdir=TD
+    node [fontname=arial style=filled fillcolor=white] 
+    edge [fontname=arial fontsize=10] 
+
+    ai [label="Apache\nIsis"]
+    st [label="Smalltalk"]
+    sml [label="Simula"]
+    ddd [label="Domain\nDriven\nDesign"]
+    dci [label="Data\nContext\nInteraction"]
+    tdd [label="Test\nDriven\nDesign"]
+    nop [label="Naked\nObjects\nPattern"]
+    mvc [label="Model\nView\nController"]
+    aop [label="Aspect\nOriented\nProgramming"]
+    
+    sml -> st
+    st -> ddd [label="E. Evans"]
+    st -> nop [label="R. Pawson"]
+    st -> tdd [label="K. Beck\n(Sunit)"]
+    mvc -> st, dci [label="T. Reenskaug"]
+    dci, tdd, nop, ddd, aop -> ai
+    
+    xp [shape=none fontsize=10 label="Xerox Parc:\n D.Ingalls \n D. Engelbart \n A. Kay"]
+    
+    
+    xp -> st [nodesep=0.01 style=dotted arrowhead=none ]
+    
+}
+----

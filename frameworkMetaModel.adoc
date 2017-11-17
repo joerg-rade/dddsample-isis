@@ -108,7 +108,15 @@ digraph g {
             </TR>
             <TR>
                 <TD ALIGN="LEFT"> nature</TD>
-                <TD ALIGN="LEFT"> NatureOfService.Domain <br/> <b>VIEW</b> <br/> VIEW_CONTRIBUTION <br/> VIEW_MENU_ONLY <br/> VIEW_REST_ONLY </TD>
+                <TD ALIGN="LEFT"> <TABLE BORDER="1">
+<TR><TD> NatureOfService</TD></TR>
+<HR />
+<TR><TD> DOMAIN </TD></TR>
+<TR><TD> <b>VIEW</b> </TD></TR>
+<TR><TD> VIEW_CONTRIBUTION </TD></TR>
+<TR><TD> VIEW_MENU_ONLY </TD></TR>
+<TR><TD> VIEW_REST_ONLY</TD></TR>
+</TABLE> </TD>
             </TR>
             <TR>
                 <TD ALIGN="LEFT"> objectType </TD>
@@ -140,17 +148,17 @@ digraph g {
             <HR />
             <TR>
                 <TD ALIGN="LEFT"> command </TD>
-                <TD ALIGN="LEFT"> CommandReification </TD>
+                <TD ALIGN="LEFT"> CommandReification.AS_CONFIGURED </TD>
             </TR>
             <TR>
                 <TD ALIGN="LEFT"> commandExecuteIn </TD>
-                <TD ALIGN="LEFT"> CommandExecuteIn </TD>
+                <TD ALIGN="LEFT"> CommandExecuteIn.FOREGROUND </TD>
             </TR>
             <TR>
                 <TD ALIGN="LEFT"> commandPersistence </TD>
-                <TD ALIGN="LEFT"> CommandPersistence </TD>
+                <TD ALIGN="LEFT"> CommandPersistence.PERSISTED </TD>
             </TR>
-            <TR>
+             <TR>
                 <TD ALIGN="LEFT"> domainEvent </TD>
                 <TD ALIGN="LEFT"> Class&lt;? extends PropertyDomainEvent&lt;?,?&gt;&gt; </TD>
             </TR>
@@ -409,16 +417,20 @@ SAFE_AND_REQUEST_CACHEABLE<br/> </TD>
                 <TD ALIGN="LEFT"> ... </TD>
             </TR>
             <TR>
-                <TD ALIGN="LEFT"> removeFrom&lt;CollectionName&gt;() </TD>
-                <TD ALIGN="LEFT"> ... </TD>
-            </TR>
-            <TR>
                 <TD ALIGN="LEFT"> clear&lt;PropertyName&gt;() </TD>
                 <TD ALIGN="LEFT"> ... </TD>
             </TR>
             <TR>
+                <TD ALIGN="LEFT"> edit&lt;PropertyName&gt;() </TD>
+                <TD ALIGN="LEFT"> ... </TD>
+            </TR>
+            <TR>
                 <TD ALIGN="LEFT"> modify&lt;PropertyName&gt;() </TD>
-                <TD ALIGN="LEFT">  ... </TD>
+                <TD ALIGN="LEFT"> ... </TD>
+            </TR>
+            <TR>
+                <TD ALIGN="LEFT"> removeFrom&lt;CollectionName&gt;() </TD>
+                <TD ALIGN="LEFT"> ... </TD>
             </TR>
         </TABLE> 
     >] 
@@ -725,6 +737,7 @@ SAFE_AND_REQUEST_CACHEABLE<br/> </TD>
     >]   
     
     // Enumerations
+    node[color="#8064A2"]
     enum [label=<
         <TABLE BORDER="0">
             <TR>
@@ -738,11 +751,6 @@ SAFE_AND_REQUEST_CACHEABLE<br/> </TD>
                 <TD BORDER="1" ALIGN="CENTER"> @DomainObject <br/> @Property <br/> @Collection <br/> @Action </TD>
             </TR>
             <TR>
-                <TD BORDER="1" ALIGN="CENTER"> BookmarkPolicy </TD>
-                <TD BORDER="1" ALIGN="CENTER">AS_CHILD<br/>AS_ROOT<br/>NEVER</TD>
-                <TD BORDER="1" ALIGN="CENTER"> @ViewModelLayout <br/> @DomainObjectLayout <br/> @ActionLayout </TD>
-            </TR>
-            <TR>
                 <TD BORDER="1" ALIGN="CENTER"> CommandExecuteIn</TD>
                 <TD BORDER="1" ALIGN="CENTER">BACKGROUND<br/>FOREGROUND</TD>
                 <TD BORDER="1" ALIGN="CENTER"> @Action <br/> @Property </TD>
@@ -751,11 +759,6 @@ SAFE_AND_REQUEST_CACHEABLE<br/> </TD>
                 <TD BORDER="1" ALIGN="CENTER"> CommandPersistence </TD>
                 <TD BORDER="1" ALIGN="CENTER"> IF_HINTED <br/> NOT_PERSISTED <br/> PERSISTED </TD>
                 <TD BORDER="1" ALIGN="CENTER"> @Action <br/> @Property </TD>
-            </TR>
-    		<TR>
-                <TD BORDER="1" ALIGN="CENTER"> LabelPosition</TD>
-                <TD BORDER="1" ALIGN="CENTER"> DEFAULT <br/> LEFT <br/> RIGHT <br/> TOP <br/> NONE <br/> NOT_SPECIFIED </TD>
-                <TD BORDER="1" ALIGN="CENTER"> @ParameterLayout <br/> @PropertyLayout <br/> @CollectionLayout <br/> @DomainObjectLayout <br/> @ViewModelLayout <br/> @ActionLayout </TD>
             </TR>
     		<TR>
                 <TD BORDER="1" ALIGN="CENTER"> MementoSerialization </TD>
@@ -767,6 +770,41 @@ SAFE_AND_REQUEST_CACHEABLE<br/> </TD>
                 <TD BORDER="1" ALIGN="CENTER"> DEFAULT <br/> MANDATORY <br/> OPTIONAL </TD>
                 <TD BORDER="1" ALIGN="CENTER"> @Property <br/> @Parameter </TD>
             </TR>
+        </TABLE>
+    >]
+    enumw [label=<
+        <TABLE BORDER="0">
+            <TR><TD ALIGN="LEFT">Where</TD></TR>
+            <HR />
+            <TR><TD ALIGN="LEFT">ALL_EXCEPT_STANDALONE_TABLES</TD></TR>
+            <TR><TD ALIGN="LEFT">ALL_TABLES</TD></TR>
+			<TR><TD ALIGN="LEFT">ANYWHERE</TD></TR>
+            <TR><TD ALIGN="LEFT">EVERYWHERE</TD></TR>
+            <TR><TD ALIGN="LEFT">NOT_SPECIFIED</TD></TR>
+            <TR><TD ALIGN="LEFT">NOWHERE</TD></TR>
+            <TR><TD ALIGN="LEFT">OBJECT_FORMS</TD></TR>
+            <TR><TD ALIGN="LEFT">PARENTED_TABLES</TD></TR>
+            <TR><TD ALIGN="LEFT">REFERENCES_PARENT</TD></TR>
+ 			<TR><TD ALIGN="CENTER">STANDALONE_TABLES</TD></TR>
+        </TABLE>
+    >]
+    enuml [label=<
+        <TABLE BORDER="0">
+            <TR>
+                <TD BORDER="1" ALIGN="LEFT" BGCOLOR="lightgrey">Enumerations</TD>
+                <TD BORDER="1" ALIGN="LEFT" BGCOLOR="lightgrey">Values</TD>
+                <TD BORDER="1" ALIGN="LEFT" BGCOLOR="lightgrey">Referenced in</TD>
+            </TR>
+            <TR>
+                <TD BORDER="1" ALIGN="CENTER"> BookmarkPolicy </TD>
+                <TD BORDER="1" ALIGN="CENTER">AS_CHILD<br/>AS_ROOT<br/>NEVER</TD>
+                <TD BORDER="1" ALIGN="CENTER"> @ViewModelLayout <br/> @DomainObjectLayout <br/> @ActionLayout </TD>
+            </TR>
+    		<TR>
+                <TD BORDER="1" ALIGN="CENTER"> LabelPosition</TD>
+                <TD BORDER="1" ALIGN="CENTER"> DEFAULT <br/> LEFT <br/> RIGHT <br/> TOP <br/> NONE <br/> NOT_SPECIFIED </TD>
+                <TD BORDER="1" ALIGN="CENTER"> @ParameterLayout <br/> @PropertyLayout <br/> @CollectionLayout <br/> @DomainObjectLayout <br/> @ViewModelLayout <br/> @ActionLayout </TD>
+            </TR>
             <TR>
                 <TD BORDER="1" ALIGN="CENTER"> PromptStyle </TD>
                 <TD BORDER="1" ALIGN="CENTER"> AS_CONFIGURED <br/> DIALOG <br/> INLINE <br/> INLINE_AS_IF_EDIT </TD>
@@ -776,21 +814,6 @@ SAFE_AND_REQUEST_CACHEABLE<br/> </TD>
                 <TD BORDER="1" ALIGN="CENTER"> RenderDay </TD>
                 <TD BORDER="1" ALIGN="CENTER"> AS_DAY <br/> AS_DAY_BEFORE <br/> NOT_SPECIFIED  </TD>
                 <TD BORDER="1" ALIGN="CENTER"> @ParameterLayout <br/> @PropertyLayout </TD>
-            </TR>
- 		    <TR>
-                <TD BORDER="1" ALIGN="CENTER"> Where </TD>
-                <TD BORDER="1" ALIGN="CENTER">ALL_EXCEPT_STANDALONE_TABLES 
-				<br/> ALL_TABLES
-				<br/> ANYWHERE
-				<br/> EVERYWHERE
-				<br/> NOT_SPECIFIED 
-				<br/> NOWHERE
-				<br/> OBJECT_FORMS
-				<br/> PARENTED_TABLES
-				<br/> REFERENCES_PARENT
-				<br/> STANDALONE_TABLES
-			    </TD>
-                <TD BORDER="1" ALIGN="CENTER"> @Action / @ActionLayout <br/> @Property / @PropertyLayout <br/> @CollectionLayout </TD>
             </TR>
         </TABLE>
     >]
@@ -919,16 +942,22 @@ SAFE_AND_REQUEST_CACHEABLE<br/> </TD>
     method -> a, pm, sma, mo, hp, t
     field -> p, c, t, pat, mo, jdof, smp
     
-//	g [label="@lombok.Getter"]
-//	s [label="@lombok.Setter"]
-    //field -> g, s 
-    
-    rank=same {class, method, field}
-    rank=same {dsl, dol, vml, cl, pl}
-    rank=min {jdoc, jdof, enum, i, pat} 
     
     // glue nodes together
     i -> jdoc -> enum -> pat -> jdof [style=invis]
+    rank=min {jdoc, jdof, enum, enuml, i, pat} 
+
+    rank=same {class, method, field}
+    rank=same {ds, vm, smc, do, pm, hp, sma, a, mo, p, c, smp} 
+
+    // glue nodes together
+    dsl -> vml -> dol -> pml -> al -> pl -> enumw -> cl [style=invis]
+    rank=same {dsl, vml, dol, pml, al, pl, enumw, cl}
+    
+    a, al, p, pl, cl -> enumw
+    
+    //rank=max {}
+
 }
 ----
 ...
