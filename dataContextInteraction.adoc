@@ -1,5 +1,5 @@
 .Data-Context-Interaction
-[graphviz, dot-example, svg]
+[graphviz, DCI, png]
 ----
 digraph g {
     node [fontname=Helvetica  fontsize=20] 
@@ -117,10 +117,6 @@ digraph g {
 }
 ----
 ...
-
-=== Motivation
-In my understanding the Naked Objects approach together with the Hexagonal Architecture aims to remove technical clutter (boilerplate) from implementation and thereby putting the Domain Object Model (back) into focus. Design Model and Object Model converge to POJO's.
-User Interfaces are derived from objects, actions that can be invoked on them, and lists of objects. 
 
 === Open Issues:
 

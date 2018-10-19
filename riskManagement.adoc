@@ -1,6 +1,6 @@
 
 .Apache Isis - Risk Types
-[graphviz, riskTypes, svg]
+[graphviz, riskTypes, png]
 ----
 digraph g {
     layout=circo
@@ -110,5 +110,3 @@ IMO the only seriuos points are
 * Security
 
 Network (Server-Client Communication) Issues can be addressed by using a custom client using the RESTful API and the possibility to tailor the JSON structure to requirements without code change.
-
-Security - Vulnaribilities need to be addressed by FW development ASAP.

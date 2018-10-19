@@ -1,0 +1,29 @@
+# Apache Isis / Artwork
+
+* bright Red: #C0504D rgb(192,80,77)
+* bright Orange: #F79646 rgb(247,150,70)
+* bright Green: #9BBB59 rgb(155,187,89)
+* bright Blue: #4F81BD rgb(79,129,189)
+* bright Light Blue: #4BACC6
+* bright Violet:#8064A2 rgb(128,100,162)
+
+* dim Violet: #CEA7FE
+* dim blue: #85CBFF
+* dim lightblue: #85F0FF
+* dim green: #C5F285
+* dim orange: #FFBB85
+* dim red: #FF8C88
+----
+convert Magere_Brug.jpg -colorspace Gray Magere_Brug_gray.png
+convert Magere_Brug_gray.png -colorspace gray isis_clut.png -clut Magere_Brug_isis.png
+http://patorjk.com/software/taag/#p=display&f=Soft&t=roViz
+
+# Related?
+IFML language to describe UI's
+Erik Evans: Interchange Lanuage
+"code as design" school of thinking (http://www.developerdotstar.com/mag/articles/reeves_design.html),
+https://en.wikipedia.org/wiki/Minimalism
+https://en.wikipedia.org/wiki/Ford_Model_T
+
+Non-functional requirement [3] https://en.wikipedia.org/wiki/Non-functional_requirement
+Usability of the Framework [4] https://en.wikipedia.org/wiki/Usability

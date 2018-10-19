@@ -1,7 +1,4 @@
-.References
-* Evans, Eric: Domain Driven Design. Tackling Complexity in the Heart of Software 
-
-.Domain Driven Design - Tactical Level
+.History
 [graphviz, history, png]
 ----
 digraph g {
@@ -13,20 +10,24 @@ digraph g {
 
     ai [label="Apache\nIsis"]
     st [label="Smalltalk"]
+    java [label="Java"]
     sml [label="Simula"]
     ddd [label="Domain\nDriven\nDesign"]
     dci [label="Data\nContext\nInteraction"]
-    tdd [label="Test\nDriven\nDesign"]
+    tdd [label="Test\nDriven\nDevelopment"]
     nop [label="Naked\nObjects\nPattern"]
     mvc [label="Model\nView\nController"]
     aop [label="Aspect\nOriented\nProgramming"]
+    ooui [label="Object\nOriented\nUser Interface"]
     
     sml -> st
     st -> ddd [label="E. Evans"]
     st -> nop [label="R. Pawson"]
     st -> tdd [label="K. Beck\n(Sunit)"]
+    st -> java [label=""]
+    st -> ooui 
     mvc -> st, dci [label="T. Reenskaug"]
-    dci, tdd, nop, ddd, aop -> ai
+    dci, tdd, nop, ddd, aop, java, ooui -> ai
     
     xp [shape=none fontsize=10 label="Xerox Parc:\n D.Ingalls \n D. Engelbart \n A. Kay"]
     

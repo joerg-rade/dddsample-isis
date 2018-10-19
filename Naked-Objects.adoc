@@ -1,0 +1,282 @@
+.Benefits
+[graphviz, Benefits, png]
+----
+digraph g {
+        node [fontname = Arial, shape = record]
+        edge [fontname = Arial]     
+
+        DOM [label = "\<\<executable\>\>\nDomain Model" shape=component ]
+        OOUI [label="\<\<generated\>\>\n Object Oriented \n User Interface"]
+        DD [label="\<\<generated\>\>\n Persistence \n (Data Definition)"]
+        REST [label="\<\<generated\>\>\n REST \n Interface"]
+          
+        DOM -> OOUI [label="is used to \n generate"]
+        DOM -> DD [label="is used to \n generate"]
+        DOM -> REST [label="is used to \n generate"]
+        
+        node [shape=note fillcolor=gold style=filled]
+        DDD [label="Domain\nDriven\nDesign" ]
+        TDD [label="Test\nDriven\nDeveloment" ]
+        RAD [label="Rapid\nApplication\nDevelopmnent"]
+        SS [label="Single Sourcing"]
+        CUI [label="Custom\n UI"]
+
+        edge [arrowhead=vee style=dashed]
+        DOM -> DDD [label="obeys"]
+        OOUI, DD -> RAD [label="results\nin"]
+        TDD -> DOM [label="Domain Objects\ncan easily be\nunit tested"]
+        DOM -> SS [label="realizes"]
+        REST -> CUI [label="use to create"]
+}
+----
+
+.Metamodel
+[graphviz, MetaModel, png]
+----
+digraph g {
+        node [fontname = Arial, shape = record]
+        edge [fontname = Arial]     
+
+        DOM [label = "{ 
+            DomainObject 
+            | + title : String \l 
+              + icon : img
+        }"]
+
+        ASC [label=<<i>Association</i>>];
+        To1 [label = "{ 
+            OneToOne 
+        }"]
+        ToN [label = "{ 
+            OneToMany 
+        }"]
+
+        ACT [label = "{
+            Action
+            | + title : String \l 
+              + icon : img
+            | + execute() : void
+        }"]
+
+
+        PAR [label = "{
+            Parameter
+            | + title : String 
+        }"]
+
+        To1 -> ASC [arrowhead=empty ] 
+        To1 -> DOM [arrowhead=vee taillabel="attribute"]
+        ToN -> ASC [arrowhead=empty] 
+        ToN -> DOM [arrowhead=vee taillabel="list" label="0..n"]
+        ASC -> DOM [arrowhead=diamond taillabel="0..n"]
+        ACT -> DOM [arrowhead=diamond taillabel="0..n"]
+        PAR -> ACT [arrowhead=diamond taillabel="0..n"]
+        PAR -> DOM [arrowhead=vee taillabel="type"]
+
+}
+----
+
+.MVC
+[graphviz, MVC, png]
+----
+digraph g {
+    node[fontname=arial]
+	edge[arrowhead=vee style=dashed]
+
+    subgraph cluster_0 {
+		fontname=arial; labeljust=l;
+ 		label="Presentation";
+		node[shape=none];
+ 		p4; p3; p2; 
+p1 [label=<
+<TABLE BORDER="0" cellspacing="0">
+    <TR>
+        <TD HEIGHT="4px" BGCOLOR="lightgrey" COLSPAN="3"></TD> 
+    </TR><TR>
+        <TD HEIGHT="4px" BGCOLOR="#85CBFF" COLSPAN="3"></TD>  
+    </TR><TR>
+        <TD WIDTH="18px" BGCOLOR="#85CBFF"></TD> 
+        <TD WIDTH="18px" BGCOLOR="lightgrey" HEIGHT="24px"></TD>  
+        <TD WIDTH="4px" BGCOLOR="#85CBFF"></TD> 
+    </TR><TR>
+        <TD HEIGHT="4px" BGCOLOR="#85CBFF" COLSPAN="3"></TD> 
+    </TR>
+</TABLE>
+>];
+p2 [label=<
+<TABLE BORDER="0" cellspacing="0">
+    <TR>
+        <TD HEIGHT="4px" BGCOLOR="lightgrey" COLSPAN="5"></TD> 
+    </TR><TR>
+        <TD HEIGHT="4px" BGCOLOR="#85CBFF" COLSPAN="5"></TD>  
+    </TR><TR>
+        <TD WIDTH="4px" BGCOLOR="#85CBFF"></TD> 
+        <TD WIDTH="10px" BGCOLOR="lightgrey"></TD> 
+        <TD WIDTH="4px" BGCOLOR="#85CBFF"></TD> 
+        <TD WIDTH="18px" BGCOLOR="lightgrey" HEIGHT="10px"></TD>  
+        <TD WIDTH="4px" BGCOLOR="#85CBFF"></TD>
+    </TR><TR>
+        <TD WIDTH="4px" BGCOLOR="#85CBFF"></TD> 
+        <TD WIDTH="10px" BGCOLOR="#85CBFF"></TD> 
+        <TD WIDTH="4px" BGCOLOR="#85CBFF"></TD> 
+        <TD WIDTH="18px" BGCOLOR="lightgrey" HEIGHT="14px" ></TD> 
+        <TD WIDTH="4px" BGCOLOR="#85CBFF"></TD> 
+    </TR><TR>
+        <TD HEIGHT="4px" BGCOLOR="#85CBFF" COLSPAN="5" ></TD> 
+    </TR>
+</TABLE>
+>];
+p3 [label=<
+<TABLE BORDER="0" cellspacing="0">
+    <TR>
+        <TD HEIGHT="4px" BGCOLOR="lightgrey" COLSPAN="5" ></TD> 
+    </TR><TR>
+        <TD HEIGHT="4px" BGCOLOR="#85CBFF" COLSPAN="5" ></TD> 
+    </TR><TR>
+        <TD WIDTH="8px" BGCOLOR="#85CBFF"></TD> 
+        <TD WIDTH="10px" BGCOLOR="#85CBFF"></TD>
+        <TD WIDTH="4px" BGCOLOR="lightgrey" HEIGHT="8px"></TD>
+        <TD WIDTH="10px" BGCOLOR="lightgrey" HEIGHT="8px"></TD>
+        <TD WIDTH="8px" BGCOLOR="#85CBFF"></TD>
+    </TR><TR>
+        <TD HEIGHT="4px" BGCOLOR="#85CBFF" COLSPAN="5" ></TD>
+    </TR><TR>
+        <TD WIDTH="8px" BGCOLOR="#85CBFF"></TD>
+        <TD WIDTH="10px" BGCOLOR="lightgrey" HEIGHT="8px" ></TD> 
+        <TD WIDTH="4px" BGCOLOR="lightgrey" HEIGHT="8px" ></TD>
+        <TD WIDTH="10px" BGCOLOR="#85CBFF"></TD> 
+        <TD WIDTH="8px" BGCOLOR="#85CBFF"></TD> 
+    </TR><TR>
+        <TD HEIGHT="4px" BGCOLOR="#85CBFF" COLSPAN="5" ></TD>
+    </TR>
+</TABLE>
+>];
+p4 [label=<
+<TABLE BORDER="0" cellspacing="0">
+    <TR>
+        <TD HEIGHT="4px" BGCOLOR="lightgrey" COLSPAN="4" ></TD> 
+    </TR><TR>
+        <TD HEIGHT="4px" BGCOLOR="#85CBFF" COLSPAN="4" ></TD> 
+    </TR><TR>
+        <TD WIDTH="8px" BGCOLOR="#85CBFF"></TD>
+        <TD WIDTH="14px" BGCOLOR="lightgrey" HEIGHT="8px" ></TD> 
+        <TD WIDTH="10px" BGCOLOR="#85CBFF"></TD> 
+        <TD WIDTH="8px" BGCOLOR="#85CBFF"></TD> 
+    </TR><TR>
+        <TD WIDTH="8px" BGCOLOR="#85CBFF"></TD> 
+        <TD WIDTH="14px" BGCOLOR="lightgrey"></TD>
+        <TD WIDTH="10px" BGCOLOR="lightgrey" HEIGHT="8px"></TD>
+        <TD WIDTH="8px" BGCOLOR="#85CBFF"></TD>
+    </TR><TR>
+        <TD WIDTH="8px" BGCOLOR="#85CBFF"></TD>
+        <TD WIDTH="14px" BGCOLOR="lightgrey" HEIGHT="8px" ></TD> 
+        <TD WIDTH="10px" BGCOLOR="#85CBFF"></TD> 
+        <TD WIDTH="8px" BGCOLOR="#85CBFF"></TD> 
+    </TR><TR>
+        <TD HEIGHT="4px" BGCOLOR="#85CBFF" COLSPAN="4" ></TD>
+    </TR>
+</TABLE>
+>];   }
+
+    subgraph cluster_1 {
+		fontname=arial; labeljust=l;
+ 		label="Controller";
+		node[shape=house orientation=270 style=filled fillcolor="#FF8C88" fixedsize=true height=0.3 label=""];
+ 		c4; c3; c2; c1;
+    }
+	edge[dir=back arrowtail=vee]
+	p1 -> c1;
+	p2 -> {c1 c2 c3};
+ 	p3 -> {c2 c3 c4};
+	p4 -> c4;
+	edge[dir=normal]
+
+    subgraph cluster_2 {
+		fontname=arial; labeljust=l;
+ 		label="Domain Object";
+		node[shape=circle style=filled fillcolor="#FFBB85" fixedsize=true height=0.4 label=""];
+		o1; o2; o3; o4; o5; o6;
+    }
+    c1 -> {o1 o3};
+    c2 -> {o2 o3 o4};
+    c3 -> {o3 o4 o5 o6};
+    c4 -> {o5 o6};
+
+    subgraph cluster_3 {
+		fontname=arial; labeljust=l;
+ 		label="Data Management";
+		node[shape=box style=filled fillcolor="#C5F285" fontcolor="#C5F285" fixedsize=true height=0.5];
+		d4 [shape=record fontsize=4 label="{___|||}|{_______|||}"]; 
+		d3 [shape=record fontsize=4 label="{10|20|30}|{ above | middle | below }"]; 
+		d2 [shape=record fontsize=4 label="{111|222|333}|{abo|mid|bel}"]; 
+		d1 [shape=record fontsize=4 label="{||||}|{a|m|b||}"];
+    }
+    o4 -> d2;
+    o6 -> d4;
+}
+----
+
+.NoMVC
+[graphviz, Naked-Objects, png]
+----
+digraph g {
+node[fontname=arial]
+	edge[arrowhead=vee style=dashed]
+
+    subgraph cluster_0 {
+		style=filled; fillcolor=lightgrey;
+		fontname=arial; labeljust=l;
+ 		label="Presentation";
+		node[shape=circle style=filled fillcolor="#85CBFF" fixedsize=true height=0.4 label=""];
+ 		p6; p5; p4; p3; p2; p1;
+  	}
+
+	// controller is left here as a spacer
+    subgraph cluster_1 {
+        style=invis;
+		node[shape=none label="" style=invis];
+ 		c4; c3; c2; c1;
+    }
+	edge[style=invis];
+    p1 -> c1;
+	p2 -> {c1 c2 c3};
+ 	p3 -> {c2 c3 c4};
+	p4 -> c4;
+	edge[dir=normal]
+
+    subgraph cluster_2 {
+		fontname=arial; labeljust=l;
+ 		label="Domain Object";
+		node[shape=circle style=filled fillcolor="#FFBB85" fixedsize=true height=0.4 label=""];
+		o1; o2; o3; o4; o5; o6;
+    }
+	edge[style=invis];
+    c1 -> {o1 o3};
+    c2 -> {o2 o3 o4};
+    c3 -> {o3 o4 o5 o6};
+    c4 -> {o5 o6};
+
+	splines=false;
+	edge[style="" arrowtail=vee]
+	p1 -> o1;
+	p2 -> o2;
+ 	p3 -> o3;
+	p4 -> o4;
+	p5 -> o5;
+	p6 -> o6;
+
+     subgraph cluster_3 {
+		style=filled; fillcolor=lightgrey;
+		fontname=arial; labeljust=l;
+ 		label="Data Management";
+		node[shape=box style=filled fillcolor="#C5F285" fontcolor="#C5F285" fixedsize=true height=0.5];
+		d4 [shape=record fontsize=4 label="{___|||}|{_______|||}"]; 
+		d3 [shape=record fontsize=4 label="{10|20|30}|{ above | middle | below }"]; 
+		d2 [shape=record fontsize=4 label="{111|222|333}|{abo|mid|bel}"]; 
+		d1 [shape=record fontsize=4 label="{||||}|{a|m|b||}"];
+    }
+    o4 -> d2;
+    o6 -> d4;
+}
+----
+
