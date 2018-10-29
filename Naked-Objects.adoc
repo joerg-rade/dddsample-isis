@@ -9,7 +9,7 @@ digraph g {
         OOUI [label="\<\<generated\>\>\n Object Oriented \n User Interface"]
         DD [label="\<\<generated\>\>\n Persistence \n (Data Definition)"]
         REST [label="\<\<generated\>\>\n REST \n Interface"]
-          
+        
         DOM -> OOUI [label="is used to \n generate"]
         DOM -> DD [label="is used to \n generate"]
         DOM -> REST [label="is used to \n generate"]
@@ -18,15 +18,19 @@ digraph g {
         DDD [label="Domain\nDriven\nDesign" ]
         TDD [label="Test\nDriven\nDeveloment" ]
         RAD [label="Rapid\nApplication\nDevelopmnent"]
-        SS [label="Single Sourcing"]
+        SS [label="Single\nSourcing"]
+        LCDP [label="Low-code\nDevelopment\nPlatform"]
         CUI [label="Custom\n UI"]
 
         edge [arrowhead=vee style=dashed]
-        DOM -> DDD [label="obeys"]
+        DOM -> DDD [label="enforces"]
         OOUI, DD -> RAD [label="results\nin"]
-        TDD -> DOM [label="Domain Objects\ncan easily be\nunit tested"]
+        DOM -> TDD [label="Domain Object\nunit tests\nconstitute"]
         DOM -> SS [label="realizes"]
+        DOM -> LCDP [label="may be\nseen as"]
         REST -> CUI [label="use to create"]
+        
+        rank=min{DDD, TDD, SS, LCDP}
 }
 ----
 

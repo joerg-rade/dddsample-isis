@@ -1,0 +1,51 @@
+.When To Use the Framework
+[graphviz, WhenToUse, png]
+
+----
+digraph g {
+    //dir=TD 
+    overlap=false
+    //splines=ortho
+    graph[fontname=arial, fontsize=8, style=none]
+    edge[fontname=arial fontsize=8] 
+
+    /* start / end */
+    node[fontname=arial fontsize=8 label="" style=filled fillcolor=green width="0.1"];
+    alpha[shape=circle fillcolor=green height="0.2"]
+    omega[shape=doublecircle fillcolor=red height="0.1"] 
+    omega3[shape=doublecircle fillcolor=green height="0.1"] 
+    node [shape=diamond style=rounded fontname=arial fillcolor=white width=1.5 height=1]
+
+    {rank=min alpha}
+    {rank=max omega}
+
+    alpha -> SU, RC 
+
+    subgraph cluster1 {
+        style=dashed
+        SU [label="sovereign\nusers"]
+        RC [label="requirements\n- likely to change\n- uncertain"]
+    }
+    GM [label="Good Match" shape=rect style=rounded height=0.5] 
+    SU, RC -> GM [label="Yes" color=green]
+
+    SO [label="Still an Option" shape=rect style=rounded height=0.5] 
+    SU, RC -> SO [label="No" color=red tailport=e ]
+
+    
+    subgraph cluster2 {
+        style=dashed
+        CUI [label="Custom UI\nrequired?"]
+        OU [label="Occasional\nUsers?"]
+        HBL [label="High\nBatch\nLoad?"]
+        CUI -> OU -> HBL [label="No" color=green ]
+    }
+    GM, SO -> CUI [headport=n]
+    
+    CUI, OU, HBL -> omega [label="Yes" color=red tailport=e]
+
+    HBL -> omega3 [label="No" color=green]
+    
+}
+----
+
